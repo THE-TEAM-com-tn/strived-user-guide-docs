@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Strived User Guide",
+  "name": "docs.strived",
   "colors": {
     "primary": "#7625C2",
     "light": "#B987E8",
