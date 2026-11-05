@@ -51,8 +51,9 @@ source of the "How Strived works" diagram, which the site draws as a picture.
 The two presentation pages (`index.mdx` "Presentation" in English, `fr/index.mdx` "Présentation"
 in French, twins with the same title) are also a
 **presentation for people thinking of buying the platform**: what Strived is, the tagline, the
-diagram, what each role does, what learners and the organization get, then the way into the
-guides. Keep them short, concrete and true to the app: claim only what the guides document (online
+diagram, what each role does, what learners get, **Strived on the phone** (six iPhone shots: three
+welcome-tour steps, the dashboard, My Trainings, a classroom chat), what the organization gets, then
+the way into the guides. Keep them short, concrete and true to the app: claim only what the guides document (online
 payment and the course player's AI assistant are not available yet, so they are not sold there).
 
 **Origin.** Every guide was copied on 05/11/2026 from `LMS_Documentation` (branch `chat+ai`,
@@ -75,12 +76,13 @@ content-manager-guide/    # 5 English guides for content managers
 admin-guide/              # 9 English guides for admins
 fr/                       # FRENCH: the same tree, same file names (fr/index.mdx = "Présentation",
                           #   fr/student-guide/first-steps.mdx = "Premiers pas", …)
-style.css                 # Small custom CSS Mintlify loads on every page (logo size, footer link wrapping)
+style.css                 # Small custom CSS Mintlify loads on every page (logo size, footer link wrapping, phone grid on small screens)
 images/
   student-guide/en/<topic>/   student-guide/fr/<topic>/   # + a few flat en/ and fr/ files (study-a-training)
   instructor-guide/<topic>/   instructor-guide/fr/<topic>/
   content-manager-guide/<topic>/   content-manager-guide/fr/<topic>/
   admin-guide/<topic>/        admin-guide/fr/<topic>/
+  presentation/en/   presentation/fr/   # the six framed iPhone shots of "Strived on the phone" (same file names)
 logo/strived-light.png    # header + footer logo on light pages: the Strived logo + "Strived" in #7625C2
 logo/strived-dark.png     # same on dark pages, name in #EDE9FE
 favicon.png               # the Strived logo alone
@@ -141,7 +143,8 @@ delete a screenshot when its page stops using it.
   (Font Awesome name: `rocket`, `compass`, `chart-line`, …).
 - Components in use: `<Note>`, `<Tip>`, `<Warning>`, `<Steps>` / `<Step>`, `<Frame caption="…">`
   around an `<img src="/images/…" alt="…" />`, `<AccordionGroup>` / `<Accordion>`, `<CardGroup>` /
-  `<Card>`, Markdown tables. Only built-in Mintlify components; no custom JSX.
+  `<Card>`, `<Columns cols={3}>` (the phone grid of the presentation pages; `style.css` keeps it at
+  two per row on small screens), Markdown tables. Only built-in Mintlify components; no custom JSX.
 - Links are absolute site paths: `/admin-guide/manage-orders` on English pages,
   `/fr/admin-guide/manage-orders` on French pages. English pages link to English pages only,
   French pages to French pages only (the language menu handles the switch).
@@ -208,6 +211,16 @@ delete a screenshot when its page stops using it.
 - The voucher e-mail is **French only**, so `use-a-voucher` shows the French e-mail shots
   (`fr/voucher/0[1-3]-email-*.png`) and explains the labels in a table. Swap them if the e-mail is
   ever translated.
+- **Phone shots** (`images/presentation/en|fr/`, used only by the two presentation pages): the iOS
+  app on the **iPhone 17 Pro simulator**, against TEST, signed in as `student@fivermail.com`. Taken
+  on 05/11/2026 from a clean copy of `LMS_Frontend` HEAD with a throwaway integration test that drives
+  the app (onboarding steps 1-3 with English or Français picked; then Dashboard, a tap on
+  **My Content** / **Mon contenu** and **My Trainings** / **Mes formations**, and the `class - 10`
+  chat), while `xcrun simctl io <device> screenshot` grabs each screen. The app hides the iOS status
+  bar, so the black band at the top is real. Each shot (1206 × 2622) gets a simple phone frame (dark
+  bezel, Dynamic Island) and is saved 600 px wide. Leave out the Marketplace, exam screens (the app
+  itself recommends the web for exams) and the course player (it shows the AI assistant button,
+  not sold yet). Retake both languages together.
 - **The demo classroom `class - 10`.** Every classroom screenshot of the four roles shows this TEST
   classroom (instructor `instructor@fivermail.com`, one learner "Student Demo"): welcome text, a
   Google Meet card with a **Join Google Meet** button, "This week's plan" table, resources, house

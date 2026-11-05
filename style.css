@@ -12,3 +12,10 @@
   overflow: visible;
   text-overflow: clip;
 }
+
+/* Phone screenshots on the presentation pages: two phones per row on small screens, not one. */
+@media (max-width: 639px) {
+  .columns:has(img[src*="/images/presentation/"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
