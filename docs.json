@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Strived User Guide",
   "colors": {
-    "primary": "#7C3AED",
-    "light": "#A78BFA",
-    "dark": "#6D28D9"
+    "primary": "#7625C2",
+    "light": "#B987E8",
+    "dark": "#7625C2"
   },
   "favicon": "/favicon.png",
   "logo": {
@@ -15,14 +15,6 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Introduction",
-        "href": "/"
-      },
-      {
-        "label": "Présentation",
-        "href": "/presentation"
-      },
       {
         "label": "Support",
         "href": "mailto:service.desk@theteam.com.tn"
@@ -35,153 +27,246 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Introduction",
-        "icon": "house",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "In English",
-            "icon": "globe",
-            "pages": [
-              "index"
+            "tab": "Presentation",
+            "icon": "house",
+            "groups": [
+              {
+                "group": "Strived",
+                "pages": [
+                  "index"
+                ]
+              }
             ]
           },
           {
-            "group": "En français",
-            "icon": "language",
-            "pages": [
-              "presentation"
+            "tab": "Student",
+            "icon": "graduation-cap",
+            "groups": [
+              {
+                "group": "Student guides",
+                "pages": [
+                  "student-guide/first-steps",
+                  "student-guide/use-a-voucher",
+                  "student-guide/study-a-training",
+                  "student-guide/take-a-mock-exam",
+                  "student-guide/review-your-exam-attempts",
+                  "student-guide/get-your-certificates",
+                  "student-guide/classrooms-and-chat",
+                  "student-guide/buy-a-training",
+                  "student-guide/manage-your-account"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Instructor",
+            "icon": "chalkboard-user",
+            "groups": [
+              {
+                "group": "Instructor guides",
+                "pages": [
+                  "instructor-guide/get-started",
+                  "instructor-guide/build-your-public-profile",
+                  "instructor-guide/create-and-update-trainings",
+                  "instructor-guide/create-exams-and-quizzes",
+                  "instructor-guide/classrooms-and-chatrooms",
+                  "instructor-guide/track-your-sales"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Content Manager",
+            "icon": "folder-gear",
+            "groups": [
+              {
+                "group": "Content manager guides",
+                "pages": [
+                  "content-manager-guide/get-started",
+                  "content-manager-guide/manage-trainings",
+                  "content-manager-guide/manage-exams-and-quizzes",
+                  "content-manager-guide/classrooms",
+                  "content-manager-guide/categories-and-tags"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Admin",
+            "icon": "user-shield",
+            "groups": [
+              {
+                "group": "Admin guides",
+                "pages": [
+                  "admin-guide/get-started",
+                  "admin-guide/manage-orders",
+                  "admin-guide/manage-trainings",
+                  "admin-guide/manage-exams-and-quizzes",
+                  "admin-guide/vouchers-and-coupons",
+                  "admin-guide/manage-users",
+                  "admin-guide/classrooms-and-chatrooms",
+                  "admin-guide/send-notifications",
+                  "admin-guide/categories-and-tags"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Student",
-        "icon": "graduation-cap",
-        "groups": [
-          {
-            "group": "Guides in English",
-            "icon": "globe",
-            "pages": [
-              "student-guide/first-steps",
-              "student-guide/use-a-voucher",
-              "student-guide/study-a-training",
-              "student-guide/take-a-mock-exam",
-              "student-guide/review-your-exam-attempts",
-              "student-guide/get-your-certificates",
-              "student-guide/classrooms-and-chat",
-              "student-guide/buy-a-training",
-              "student-guide/manage-your-account"
-            ]
-          },
-          {
-            "group": "Guides en français",
-            "icon": "language",
-            "pages": [
-              "student-guide/premiers-pas",
-              "student-guide/utiliser-un-voucher",
-              "student-guide/suivre-une-formation",
-              "student-guide/passer-un-examen-blanc",
-              "student-guide/revoir-ses-tentatives",
-              "student-guide/obtenir-ses-certificats",
-              "student-guide/classes-et-discussion",
-              "student-guide/acheter-une-formation",
-              "student-guide/gerer-son-compte"
-            ]
+        "language": "fr",
+        "navbar": {
+          "links": [
+            {
+              "label": "Assistance",
+              "href": "mailto:service.desk@theteam.com.tn"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Ouvrir Strived",
+            "href": "https://elearning.theteam.com.tn"
           }
-        ]
-      },
-      {
-        "tab": "Instructor",
-        "icon": "chalkboard-user",
-        "groups": [
+        },
+        "footer": {
+          "socials": {
+            "website": "https://elearning.theteam.com.tn"
+          },
+          "links": [
+            {
+              "header": "Guides",
+              "items": [
+                {
+                  "label": "Apprenant",
+                  "href": "/fr/student-guide/first-steps"
+                },
+                {
+                  "label": "Formateur",
+                  "href": "/fr/instructor-guide/get-started"
+                },
+                {
+                  "label": "Gestionnaire de contenu",
+                  "href": "/fr/content-manager-guide/get-started"
+                },
+                {
+                  "label": "Admin",
+                  "href": "/fr/admin-guide/get-started"
+                }
+              ]
+            },
+            {
+              "header": "Strived",
+              "items": [
+                {
+                  "label": "Présentation",
+                  "href": "/fr"
+                },
+                {
+                  "label": "Ouvrir Strived",
+                  "href": "https://elearning.theteam.com.tn"
+                }
+              ]
+            },
+            {
+              "header": "Assistance",
+              "items": [
+                {
+                  "label": "Contacter l'assistance",
+                  "href": "mailto:service.desk@theteam.com.tn"
+                }
+              ]
+            }
+          ]
+        },
+        "tabs": [
           {
-            "group": "Guides in English",
-            "icon": "globe",
-            "pages": [
-              "instructor-guide/get-started",
-              "instructor-guide/build-your-public-profile",
-              "instructor-guide/create-and-update-trainings",
-              "instructor-guide/create-exams-and-quizzes",
-              "instructor-guide/classrooms-and-chatrooms",
-              "instructor-guide/track-your-sales"
+            "tab": "Présentation",
+            "icon": "house",
+            "groups": [
+              {
+                "group": "Strived",
+                "pages": [
+                  "fr/index"
+                ]
+              }
             ]
           },
           {
-            "group": "Guides en français",
-            "icon": "language",
-            "pages": [
-              "instructor-guide/prise-en-main",
-              "instructor-guide/construire-son-profil-public",
-              "instructor-guide/creer-et-modifier-des-formations",
-              "instructor-guide/creer-des-examens-et-des-quiz",
-              "instructor-guide/classes-et-salons-de-discussion",
-              "instructor-guide/suivre-ses-ventes"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Content Manager",
-        "icon": "folder-gear",
-        "groups": [
-          {
-            "group": "Guides in English",
-            "icon": "globe",
-            "pages": [
-              "content-manager-guide/get-started",
-              "content-manager-guide/manage-trainings",
-              "content-manager-guide/manage-exams-and-quizzes",
-              "content-manager-guide/classrooms",
-              "content-manager-guide/categories-and-tags"
+            "tab": "Apprenant",
+            "icon": "graduation-cap",
+            "groups": [
+              {
+                "group": "Guides de l'apprenant",
+                "pages": [
+                  "fr/student-guide/first-steps",
+                  "fr/student-guide/use-a-voucher",
+                  "fr/student-guide/study-a-training",
+                  "fr/student-guide/take-a-mock-exam",
+                  "fr/student-guide/review-your-exam-attempts",
+                  "fr/student-guide/get-your-certificates",
+                  "fr/student-guide/classrooms-and-chat",
+                  "fr/student-guide/buy-a-training",
+                  "fr/student-guide/manage-your-account"
+                ]
+              }
             ]
           },
           {
-            "group": "Guides en français",
-            "icon": "language",
-            "pages": [
-              "content-manager-guide/prise-en-main",
-              "content-manager-guide/gerer-les-formations",
-              "content-manager-guide/gerer-les-examens-et-quiz",
-              "content-manager-guide/classes",
-              "content-manager-guide/categories-et-tags"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Admin",
-        "icon": "user-shield",
-        "groups": [
-          {
-            "group": "Guides in English",
-            "icon": "globe",
-            "pages": [
-              "admin-guide/get-started",
-              "admin-guide/manage-orders",
-              "admin-guide/manage-trainings",
-              "admin-guide/manage-exams-and-quizzes",
-              "admin-guide/vouchers-and-coupons",
-              "admin-guide/manage-users",
-              "admin-guide/classrooms-and-chatrooms",
-              "admin-guide/send-notifications",
-              "admin-guide/categories-and-tags"
+            "tab": "Formateur",
+            "icon": "chalkboard-user",
+            "groups": [
+              {
+                "group": "Guides du formateur",
+                "pages": [
+                  "fr/instructor-guide/get-started",
+                  "fr/instructor-guide/build-your-public-profile",
+                  "fr/instructor-guide/create-and-update-trainings",
+                  "fr/instructor-guide/create-exams-and-quizzes",
+                  "fr/instructor-guide/classrooms-and-chatrooms",
+                  "fr/instructor-guide/track-your-sales"
+                ]
+              }
             ]
           },
           {
-            "group": "Guides en français",
-            "icon": "language",
-            "pages": [
-              "admin-guide/prise-en-main",
-              "admin-guide/gerer-les-commandes",
-              "admin-guide/gerer-les-formations",
-              "admin-guide/gerer-les-examens-et-quiz",
-              "admin-guide/vouchers-et-coupons",
-              "admin-guide/gerer-les-utilisateurs",
-              "admin-guide/classes-et-salons-de-discussion",
-              "admin-guide/envoyer-des-notifications",
-              "admin-guide/categories-et-tags"
+            "tab": "Gestionnaire de contenu",
+            "icon": "folder-gear",
+            "groups": [
+              {
+                "group": "Guides du gestionnaire de contenu",
+                "pages": [
+                  "fr/content-manager-guide/get-started",
+                  "fr/content-manager-guide/manage-trainings",
+                  "fr/content-manager-guide/manage-exams-and-quizzes",
+                  "fr/content-manager-guide/classrooms",
+                  "fr/content-manager-guide/categories-and-tags"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Admin",
+            "icon": "user-shield",
+            "groups": [
+              {
+                "group": "Guides de l'admin",
+                "pages": [
+                  "fr/admin-guide/get-started",
+                  "fr/admin-guide/manage-orders",
+                  "fr/admin-guide/manage-trainings",
+                  "fr/admin-guide/manage-exams-and-quizzes",
+                  "fr/admin-guide/vouchers-and-coupons",
+                  "fr/admin-guide/manage-users",
+                  "fr/admin-guide/classrooms-and-chatrooms",
+                  "fr/admin-guide/send-notifications",
+                  "fr/admin-guide/categories-and-tags"
+                ]
+              }
             ]
           }
         ]
@@ -215,36 +300,11 @@
         ]
       },
       {
-        "header": "Guides en français",
-        "items": [
-          {
-            "label": "Apprenant",
-            "href": "/student-guide/premiers-pas"
-          },
-          {
-            "label": "Formateur",
-            "href": "/instructor-guide/prise-en-main"
-          },
-          {
-            "label": "Gestionnaire de contenu",
-            "href": "/content-manager-guide/prise-en-main"
-          },
-          {
-            "label": "Admin",
-            "href": "/admin-guide/prise-en-main"
-          }
-        ]
-      },
-      {
         "header": "Strived",
         "items": [
           {
-            "label": "Introduction",
+            "label": "Presentation",
             "href": "/"
-          },
-          {
-            "label": "Présentation",
-            "href": "/presentation"
           },
           {
             "label": "Open Strived",
@@ -263,6 +323,128 @@
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/student-guide/premiers-pas",
+      "destination": "/fr/student-guide/first-steps"
+    },
+    {
+      "source": "/student-guide/utiliser-un-voucher",
+      "destination": "/fr/student-guide/use-a-voucher"
+    },
+    {
+      "source": "/student-guide/suivre-une-formation",
+      "destination": "/fr/student-guide/study-a-training"
+    },
+    {
+      "source": "/student-guide/passer-un-examen-blanc",
+      "destination": "/fr/student-guide/take-a-mock-exam"
+    },
+    {
+      "source": "/student-guide/revoir-ses-tentatives",
+      "destination": "/fr/student-guide/review-your-exam-attempts"
+    },
+    {
+      "source": "/student-guide/obtenir-ses-certificats",
+      "destination": "/fr/student-guide/get-your-certificates"
+    },
+    {
+      "source": "/student-guide/classes-et-discussion",
+      "destination": "/fr/student-guide/classrooms-and-chat"
+    },
+    {
+      "source": "/student-guide/acheter-une-formation",
+      "destination": "/fr/student-guide/buy-a-training"
+    },
+    {
+      "source": "/student-guide/gerer-son-compte",
+      "destination": "/fr/student-guide/manage-your-account"
+    },
+    {
+      "source": "/instructor-guide/prise-en-main",
+      "destination": "/fr/instructor-guide/get-started"
+    },
+    {
+      "source": "/instructor-guide/construire-son-profil-public",
+      "destination": "/fr/instructor-guide/build-your-public-profile"
+    },
+    {
+      "source": "/instructor-guide/creer-et-modifier-des-formations",
+      "destination": "/fr/instructor-guide/create-and-update-trainings"
+    },
+    {
+      "source": "/instructor-guide/creer-des-examens-et-des-quiz",
+      "destination": "/fr/instructor-guide/create-exams-and-quizzes"
+    },
+    {
+      "source": "/instructor-guide/classes-et-salons-de-discussion",
+      "destination": "/fr/instructor-guide/classrooms-and-chatrooms"
+    },
+    {
+      "source": "/instructor-guide/suivre-ses-ventes",
+      "destination": "/fr/instructor-guide/track-your-sales"
+    },
+    {
+      "source": "/content-manager-guide/prise-en-main",
+      "destination": "/fr/content-manager-guide/get-started"
+    },
+    {
+      "source": "/content-manager-guide/gerer-les-formations",
+      "destination": "/fr/content-manager-guide/manage-trainings"
+    },
+    {
+      "source": "/content-manager-guide/gerer-les-examens-et-quiz",
+      "destination": "/fr/content-manager-guide/manage-exams-and-quizzes"
+    },
+    {
+      "source": "/content-manager-guide/classes",
+      "destination": "/fr/content-manager-guide/classrooms"
+    },
+    {
+      "source": "/content-manager-guide/categories-et-tags",
+      "destination": "/fr/content-manager-guide/categories-and-tags"
+    },
+    {
+      "source": "/admin-guide/prise-en-main",
+      "destination": "/fr/admin-guide/get-started"
+    },
+    {
+      "source": "/admin-guide/gerer-les-commandes",
+      "destination": "/fr/admin-guide/manage-orders"
+    },
+    {
+      "source": "/admin-guide/gerer-les-formations",
+      "destination": "/fr/admin-guide/manage-trainings"
+    },
+    {
+      "source": "/admin-guide/gerer-les-examens-et-quiz",
+      "destination": "/fr/admin-guide/manage-exams-and-quizzes"
+    },
+    {
+      "source": "/admin-guide/vouchers-et-coupons",
+      "destination": "/fr/admin-guide/vouchers-and-coupons"
+    },
+    {
+      "source": "/admin-guide/gerer-les-utilisateurs",
+      "destination": "/fr/admin-guide/manage-users"
+    },
+    {
+      "source": "/admin-guide/classes-et-salons-de-discussion",
+      "destination": "/fr/admin-guide/classrooms-and-chatrooms"
+    },
+    {
+      "source": "/admin-guide/envoyer-des-notifications",
+      "destination": "/fr/admin-guide/send-notifications"
+    },
+    {
+      "source": "/admin-guide/categories-et-tags",
+      "destination": "/fr/admin-guide/categories-and-tags"
+    },
+    {
+      "source": "/presentation",
+      "destination": "/fr"
+    }
+  ],
   "contextual": {
     "options": [
       "copy",

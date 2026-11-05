@@ -48,7 +48,8 @@ The only code on the site is the HTML of the "Reuse the Google Meet card" accord
 instructor classroom pages (staff paste it into the classroom editor's code view) and the Mermaid
 source of the "How Strived works" diagram, which the site draws as a picture.
 
-The two introduction pages (`index.mdx` in English, `presentation.mdx` in French, twins) are also a
+The two presentation pages (`index.mdx` "Presentation" in English, `fr/index.mdx` "Présentation"
+in French, twins with the same title) are also a
 **presentation for people thinking of buying the platform**: what Strived is, the tagline, the
 diagram, what each role does, what learners and the organization get, then the way into the
 guides. Keep them short, concrete and true to the app: claim only what the guides document (online
@@ -56,29 +57,31 @@ payment and the course player's AI assistant are not available yet, so they are 
 
 **Origin.** Every guide was copied on 05/11/2026 from `LMS_Documentation` (branch `chat+ai`,
 commit `0a7358d`): `user-guide/` became `student-guide/` here (links and image paths renamed), the
-three staff folders kept their names. `LMS_Documentation` still holds its own copy under its
-"User Guide" anchor. Until the user removes it there, a guide changed in one repo should be changed
-in the other too (ask the user when unsure which copy wins).
+three staff folders kept their names, and the French pages moved to `fr/` under their English twin's
+file name (table in §5). `LMS_Documentation` still holds its own copy under its "User Guide"
+anchor. Until the user removes it there, a guide changed in one repo should be changed in the other
+too (ask the user when unsure which copy wins).
 
 ---
 
 ## 2. Repository layout
 
 ```
-docs.json                 # Mintlify config: name, colors, logo, navbar, footer and the NAVIGATION (every page must be listed)
-index.mdx                 # Home page = "Introduction" (English): presentation of Strived + diagram + role cards
-presentation.mdx          # Its French twin, "Présentation"
+docs.json                 # Mintlify config: name, colors, logo, navbar, footer, redirects and the NAVIGATION (every page must be listed)
+index.mdx                 # Home page "Presentation" (English): presentation of Strived + diagram + role cards
+student-guide/            # 9 English guides for students
+instructor-guide/         # 6 English guides for instructors
+content-manager-guide/    # 5 English guides for content managers
+admin-guide/              # 9 English guides for admins
+fr/                       # FRENCH: the same tree, same file names (fr/index.mdx = "Présentation",
+                          #   fr/student-guide/first-steps.mdx = "Premiers pas", …)
 style.css                 # Small custom CSS Mintlify loads on every page (logo size, footer link wrapping)
-student-guide/            # 9 English + 9 French guides for students
-instructor-guide/         # 6 English + 6 French guides for instructors
-content-manager-guide/    # 5 English + 5 French guides for content managers
-admin-guide/              # 9 English + 9 French guides for admins
 images/
   student-guide/en/<topic>/   student-guide/fr/<topic>/   # + a few flat en/ and fr/ files (study-a-training)
   instructor-guide/<topic>/   instructor-guide/fr/<topic>/
   content-manager-guide/<topic>/   content-manager-guide/fr/<topic>/
   admin-guide/<topic>/        admin-guide/fr/<topic>/
-logo/strived-light.png    # header + footer logo on light pages: the Strived logo + "Strived" in #6D28D9
+logo/strived-light.png    # header + footer logo on light pages: the Strived logo + "Strived" in #7625C2
 logo/strived-dark.png     # same on dark pages, name in #EDE9FE
 favicon.png               # the Strived logo alone
 AGENTS.md                 # points other AI tools to this file
@@ -99,22 +102,32 @@ delete a screenshot when its page stops using it.
 
 ## 3. Navigation (`docs.json`)
 
-- **Header**, top row: the logo (links to `/`), the search, the links **Introduction** (`/`),
-  **Présentation** (`/presentation`) and **Support** (`mailto:service.desk@theteam.com.tn`, the
-  address the app's Help Center shows), and the **Open Strived** button
-  (`https://elearning.theteam.com.tn`, the production app).
-- **Header**, tab row: **Introduction** (groups "In English" → `index`, "En français" →
-  `presentation`), then one **tab per role**: Student, Instructor, Content Manager, Admin. Each role
-  tab has two groups, **"Guides in English"** (icon `globe`) and **"Guides en français"** (icon
-  `language`), in the same order, so twins sit at the same position.
-- **Footer**: the logo, a globe icon to the app (`socials.website`), and four link columns (max 4 in
-  Mintlify): "User guides" (each role's first English page), "Guides en français" (same in
-  French), "Strived" (Introduction, Présentation, Open Strived), "Support" (**Contact support**,
-  mailto). Footer links must be URLs or site paths: Mintlify rejects `tel:`, so the support phone
-  number is not there.
+- **Two languages, one switcher.** `navigation.languages` holds `en` (default, first) and `fr`. The
+  header shows an **English / Français** menu next to the logo; switching takes the reader to the
+  **same page** in the other language, because French pages live at `fr/` + the English path
+  (`/admin-guide/manage-orders` ↔ `/fr/admin-guide/manage-orders`). Keep that rule for every new
+  page: same file name in both trees, never a French slug, and never the same path in both languages.
+- **Header**, top row: the logo (links to `/`), the language menu, the search, a **Support** /
+  **Assistance** link (`mailto:service.desk@theteam.com.tn`, the address the app's Help Center
+  shows) and the **Open Strived** / **Ouvrir Strived** button (`https://elearning.theteam.com.tn`,
+  the production app).
+- **Header**, tab row, per language: **Presentation** / **Présentation**, then one tab per role:
+  Student / Apprenant, Instructor / Formateur, Content Manager / Gestionnaire de contenu, Admin.
+  Each role tab has one group ("Student guides" / "Guides de l'apprenant", …) listing the pages in
+  the same order in both languages.
+- **Footer**: the logo, a globe icon to the app (`socials.website`), and three link columns: the
+  guides (each role's first page), "Strived" (Presentation, Open Strived) and "Support" (**Contact
+  support**, mailto). Footer links must be URLs or site paths: Mintlify rejects `tel:`, so the
+  support phone number is not there.
+- The English navbar and footer are the global `navbar` / `footer`; the French ones are the
+  `navbar` / `footer` inside the `fr` language entry. **Mintlify CLI 4.2.315 (the global install on
+  the user's Mac) ignores per-language navbar / footer and shows the English ones on French pages;
+  4.2.1204 and the hosted site show them correctly.** Preview with the latest CLI (§8).
+- `redirects` sends the old French addresses (`/student-guide/premiers-pas`, …, `/presentation`)
+  to their new `fr/` pages, so links shared before 05/11/2026 keep working. Don't remove them.
 - A page doesn't appear on the site until its path (without `.mdx`) is in `docs.json`.
-- File names are kebab-case: English slugs for English pages, French slugs for French pages.
-- Colors are Strived's purple (`#7C3AED`, light `#A78BFA`, dark `#6D28D9`), to match the logo and
+- File names are kebab-case English slugs, in both languages.
+- Colors are Strived's purple, chosen by the user: `#7625C2` (primary and buttons; light `#B987E8` for dark mode), to match the logo and
   the app. The contextual menu keeps copy / view / ChatGPT / Claude / Perplexity only; the developer
   entries (MCP, Cursor, VS Code) were removed on purpose.
 - `style.css` targets Mintlify's `#navbar` / `#footer` ids and its `.nav-logo` class; check it still
@@ -129,8 +142,9 @@ delete a screenshot when its page stops using it.
 - Components in use: `<Note>`, `<Tip>`, `<Warning>`, `<Steps>` / `<Step>`, `<Frame caption="…">`
   around an `<img src="/images/…" alt="…" />`, `<AccordionGroup>` / `<Accordion>`, `<CardGroup>` /
   `<Card>`, Markdown tables. Only built-in Mintlify components; no custom JSX.
-- Links are absolute site paths: `/student-guide/premiers-pas`, `/admin-guide/manage-orders`.
-  English pages link to English pages, French pages to French pages.
+- Links are absolute site paths: `/admin-guide/manage-orders` on English pages,
+  `/fr/admin-guide/manage-orders` on French pages. English pages link to English pages only,
+  French pages to French pages only (the language menu handles the switch).
 - MDX gotchas: `{`, `}` and `<` in prose are parsed as JSX (put them in inline code); close every
   component tag (one unclosed tag fails the whole build).
 - No raw bidirectional Unicode characters (U+202A–202E, U+2066–2069): GitHub flags the file.
@@ -146,21 +160,22 @@ delete a screenshot when its page stops using it.
   *vouvoiement*. Labels exactly as the French app shows them (`fr.json`; the lesson / classroom
   editor's tooltips come from `LMS_Frontend/web/suneditor/langs/fr.js`). A label the app shows in
   English even in French is quoted in English, and the page says so.
-- **Twins.** Every English page has a French twin with the same steps and the same screenshots
-  (English shots on English pages, French shots on French pages). When you change one, change the
-  other:
+- **Twins.** Every English page has a French twin at `fr/<same path>`, with the same steps and the
+  same screenshots (English shots on English pages, French shots on French pages). When you change
+  one, change the other. `LMS_Documentation` keeps French slugs; its pages map to this repo as
+  follows (theirs → `fr/<folder>/<this file>` here; `user-guide/` there = `student-guide/` here):
 
-  | Student (EN → FR) | Instructor (EN → FR) | Content manager (EN → FR) | Admin (EN → FR) |
+  | Student | Instructor | Content manager | Admin |
   | :-- | :-- | :-- | :-- |
-  | `first-steps` → `premiers-pas` | `get-started` → `prise-en-main` | `get-started` → `prise-en-main` | `get-started` → `prise-en-main` |
-  | `use-a-voucher` → `utiliser-un-voucher` | `build-your-public-profile` → `construire-son-profil-public` | `manage-trainings` → `gerer-les-formations` | `manage-orders` → `gerer-les-commandes` |
-  | `study-a-training` → `suivre-une-formation` | `create-and-update-trainings` → `creer-et-modifier-des-formations` | `manage-exams-and-quizzes` → `gerer-les-examens-et-quiz` | `manage-trainings` → `gerer-les-formations` |
-  | `take-a-mock-exam` → `passer-un-examen-blanc` | `create-exams-and-quizzes` → `creer-des-examens-et-des-quiz` | `classrooms` → `classes` | `manage-exams-and-quizzes` → `gerer-les-examens-et-quiz` |
-  | `review-your-exam-attempts` → `revoir-ses-tentatives` | `classrooms-and-chatrooms` → `classes-et-salons-de-discussion` | `categories-and-tags` → `categories-et-tags` | `vouchers-and-coupons` → `vouchers-et-coupons` |
-  | `get-your-certificates` → `obtenir-ses-certificats` | `track-your-sales` → `suivre-ses-ventes` | | `manage-users` → `gerer-les-utilisateurs` |
-  | `classrooms-and-chat` → `classes-et-discussion` | | | `classrooms-and-chatrooms` → `classes-et-salons-de-discussion` |
-  | `buy-a-training` → `acheter-une-formation` | | | `send-notifications` → `envoyer-des-notifications` |
-  | `manage-your-account` → `gerer-son-compte` | | | `categories-and-tags` → `categories-et-tags` |
+  | `premiers-pas` → `first-steps` | `prise-en-main` → `get-started` | `prise-en-main` → `get-started` | `prise-en-main` → `get-started` |
+  | `utiliser-un-voucher` → `use-a-voucher` | `construire-son-profil-public` → `build-your-public-profile` | `gerer-les-formations` → `manage-trainings` | `gerer-les-commandes` → `manage-orders` |
+  | `suivre-une-formation` → `study-a-training` | `creer-et-modifier-des-formations` → `create-and-update-trainings` | `gerer-les-examens-et-quiz` → `manage-exams-and-quizzes` | `gerer-les-formations` → `manage-trainings` |
+  | `passer-un-examen-blanc` → `take-a-mock-exam` | `creer-des-examens-et-des-quiz` → `create-exams-and-quizzes` | `classes` → `classrooms` | `gerer-les-examens-et-quiz` → `manage-exams-and-quizzes` |
+  | `revoir-ses-tentatives` → `review-your-exam-attempts` | `classes-et-salons-de-discussion` → `classrooms-and-chatrooms` | `categories-et-tags` → `categories-and-tags` | `vouchers-et-coupons` → `vouchers-and-coupons` |
+  | `obtenir-ses-certificats` → `get-your-certificates` | `suivre-ses-ventes` → `track-your-sales` | | `gerer-les-utilisateurs` → `manage-users` |
+  | `classes-et-discussion` → `classrooms-and-chat` | | | `classes-et-salons-de-discussion` → `classrooms-and-chatrooms` |
+  | `acheter-une-formation` → `buy-a-training` | | | `envoyer-des-notifications` → `send-notifications` |
+  | `gerer-son-compte` → `manage-your-account` | | | `categories-et-tags` → `categories-and-tags` |
 
 - **Voucher ≠ coupon.** A **voucher** ("voucher (bon)" in French) unlocks a bundle of trainings and
   exams for free; an admin creates it and it reaches the student **by e-mail**; the student redeems
@@ -221,8 +236,8 @@ twins and retake the screenshots.
   French (sidebar: **Détails des ventes**).
 - **Content manager**: the five dashboard cards show **sample figures**, not real ones, and
   `get-started` warns about it. **Create classroom** fails for a content manager ("Something went
-  wrong", in French « Une erreur s'est produite — Something went wrong »), so `classrooms` /
-  `classes` has a `<Warning>` and documents Preview and Update only.
+  wrong", in French « Une erreur s'est produite — Something went wrong »), so `classrooms` (both
+  languages) has a `<Warning>` and documents Preview and Update only.
 - **French wording** quoted as the app shows it: **Ajouter une formation** for "Add Education",
   **Détails** for "Basic Info", **Instructeur** or **Formateur** depending on the screen.
 - **Student**: the English pages describe the app as of 04/11/2026; the French ones were written on
@@ -234,15 +249,20 @@ twins and retake the screenshots.
 ## 8. Local preview & checks
 
 ```bash
-npm i -g mint       # once
-mint dev            # preview at http://localhost:3000 (run next to docs.json)
-mint broken-links   # check internal links before pushing
+npm i -g mint@latest   # or `mint update`; an old CLI shows French pages with the English navbar/footer
+mint dev               # preview at http://localhost:3000 (run next to docs.json)
+mint broken-links      # check internal links before pushing
 ```
 
 On the user's Mac, `mint dev` / `mint validate` stop with `EACCES … rmdir ~/.mintlify-last/mint`
-(that folder belongs to root). Either remove it once (`sudo rm -rf ~/.mintlify-last`) or run the
-preview with another home folder: `HOME=/some/scratch/folder mint dev --port 3333 --no-open`.
+(that folder belongs to root), and the global CLI is old (4.2.315). Either remove the folder once
+(`sudo rm -rf ~/.mintlify-last`) and update the CLI, or run the latest CLI with another home folder,
+without touching the global install:
+`HOME=/some/scratch/folder npx -y mint@latest dev --port 3333 --no-open`.
 `mint dev` also reports docs.json schema errors (it is how the `tel:` footer link was caught).
+Check both languages: the language menu, a switch on a guide page (it must land on the twin), and
+the French navbar / footer.
 
-Before a push, also check that every page in `docs.json` exists, every `/images/…` a page uses
-exists, no image is left unused, and no file holds raw bidi characters.
+Before a push, also check that every page in `docs.json` exists, the `en` and `fr` page lists
+mirror each other (`fr/` + the English path), every `/images/…` a page uses exists, no image is
+left unused, no link crosses languages, and no file holds raw bidi characters.

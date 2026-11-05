@@ -4,22 +4,25 @@ The user guide of **Strived**, the e-learning platform by THE TEAM, built with
 [Mintlify](https://mintlify.com). Step-by-step guides with screenshots of the web app, in English and
 French, for each role:
 
-| Role | Folder | Guides |
-| :-- | :-- | :-- |
-| Student | `student-guide/` | 9 English + 9 French |
-| Instructor | `instructor-guide/` | 6 English + 6 French |
-| Content manager | `content-manager-guide/` | 5 English + 5 French |
-| Admin | `admin-guide/` | 9 English + 9 French |
+English pages live at the root, French pages in `fr/` with the same file names, so the
+**English / Français** menu in the header opens the same page in the other language.
 
-The home page (`index.mdx`, French twin `presentation.mdx`) presents the platform and what each
-role does, with a diagram. Screenshots are in `images/<folder>/`, navigation, header and footer in
-`docs.json`, a little custom CSS in `style.css`. Writing and screenshot rules are
-in [`CLAUDE.md`](CLAUDE.md).
+| Role | English | French |
+| :-- | :-- | :-- |
+| Student | `student-guide/` (9 guides) | `fr/student-guide/` |
+| Instructor | `instructor-guide/` (6 guides) | `fr/instructor-guide/` |
+| Content manager | `content-manager-guide/` (5 guides) | `fr/content-manager-guide/` |
+| Admin | `admin-guide/` (9 guides) | `fr/admin-guide/` |
+
+The home page (`index.mdx` "Presentation", French `fr/index.mdx` "Présentation") presents the
+platform and what each role does, with a diagram. Screenshots are in `images/<folder>/`;
+navigation, header, footer and language menu in `docs.json`; a little custom CSS in `style.css`.
+Writing and screenshot rules are in [`CLAUDE.md`](CLAUDE.md).
 
 ## Preview
 
 ```bash
-npm i -g mint
+npm i -g mint@latest
 mint dev            # http://localhost:3000
 mint broken-links
 ```
