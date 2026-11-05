@@ -135,18 +135,26 @@ Click **Save & continue**: the exam is created **as a draft**, so you can add it
   </Step>
   <Step title="Choose the Answer type">
     **Single Choice** (one correct answer), **Multiple Choices** (several correct), **True Or
-    False** (a statement to judge) or **Drag and Drop** (match items to groups).
+    False** (a statement to judge) or **Drag and Drop** (match items to groups). Each
+    one is explained below, with a screenshot.
   </Step>
   <Step title="Write the question">
     Type the **Question**. You can add a **Question image** (JPG, PNG, GIF or WEBP) with **Choose
     image**.
   </Step>
   <Step title="Write the answers">
-    Type each answer, **Add answer** for more, and click the circle in front of the right one: it
-    turns purple and shows **Correct**.
+    Fill in the answers and mark the right one (or ones). How depends on the type: see **The four
+    answer types** below.
   </Step>
   <Step title="Add an explanation">
-    The **Explanation** is shown to learners after their attempt, next to the correct answer.
+    Click **Add Explanation** under the answers, write why the right answer is right (bold, colors
+    and lists are available) and click the button at the bottom of the window. The question then
+    shows **Added**, and **update Explanation** opens it again. Learners read it after their
+    attempt, next to the correct answer.
+
+    <Frame caption="The explanation of a question, opened with update Explanation.">
+      <img src="/images/admin-guide/exams/12-explanation.png" alt="The Update Explanation for question 1 window with the explanation text and the formatting toolbar" />
+    </Frame>
   </Step>
   <Step title="Submit">
     When every question is complete, click **Submit** at the top right.
@@ -157,6 +165,77 @@ The list on the left shows every question with its type. Filter it by type, sear
 **Search questions…**, drag the handles to reorder, and use **Previous question** / **Next
 question** to move through them. A question with something missing is flagged: the editor will not
 submit until it is fixed. The bin icon at the top right of a question deletes it.
+
+### The four answer types
+
+The **Answer type** at the top of a question decides what you fill in and what learners do. A
+question is right or wrong as a whole: learners get no half points.
+
+| Answer type | Use it for | Learners | Counted right when |
+| :-- | :-- | :-- | :-- |
+| **Single Choice** | One right answer among several | Pick one answer | They pick the right answer |
+| **Multiple Choices** | Two or more right answers | Tick several answers | They tick every right answer and no wrong one |
+| **True Or False** | A statement that is true or false | Pick **True** or **False** | They pick the right one |
+| **Drag and Drop** | Sorting items into groups | Drag each item into a group | Every group holds exactly its own items |
+
+Switching a question to another type starts its answers over. Switching back to the type it was
+saved with brings its saved answers back.
+
+### Single Choice
+
+<Frame caption="A Single Choice question, with The project charter marked Correct.">
+  <img src="/images/admin-guide/exams/08-single-choice.png" alt="A Single Choice question with four answers; the second one, The project charter, is marked Correct" />
+</Frame>
+
+A new question starts with three empty answers: type them, click **Add answer** for more, and use
+the ✕ to remove one. Click the circle in front of the right answer: it turns purple and shows
+**Correct**. Only one answer can be marked. The question shows **Complete** once every answer is
+typed and one is marked.
+
+### Multiple Choices
+
+<Frame caption="A Multiple Choices question, with two of its four answers marked correct.">
+  <img src="/images/admin-guide/exams/09-multiple-choices.png" alt="A Multiple Choices question with four answers; Sprint Review and Daily Scrum are ticked and marked Correct, 2 of 4 marked correct" />
+</Frame>
+
+Tick the box in front of each right answer: it shows **Correct**, and the count at the top right
+follows (**2 of 4 marked correct**). Mark at least two answers; for a question with one right
+answer, use **Single Choice**. During the exam, learners see how many answers to tick (**Please
+select 2 answer(s)**). The note under the answers recalls the rule: they must tick all the correct
+answers and none of the wrong ones.
+
+### True Or False
+
+<Frame caption="A True Or False question, with True as the correct answer.">
+  <img src="/images/admin-guide/exams/10-true-or-false.png" alt="A True Or False question: a statement about the Product Owner, and the True card marked as the correct answer" />
+</Frame>
+
+Write a statement in **Question**. The two answers, **True** and **False**, are already there:
+under **Correct answer**, click the right one. It turns purple and shows **Marked as the correct
+answer**.
+
+### Drag and Drop
+
+<Frame caption="A Drag and Drop question, with four items sorted into two groups.">
+  <img src="/images/admin-guide/exams/11-drag-and-drop.png" alt="A Drag and Drop question: the Predictive group holds two items, the Agile group holds two items, and no item is left to place" />
+</Frame>
+
+1. **Add the items.** Type one in **Write something and press Enter to add item** and press
+   **Enter**: it joins the items to place, under the field. The ✕ on an item deletes it.
+2. **Name the groups.** Two are there to start, **Group 1** and **Group 2**: click a name to change
+   it. **Create Category** adds a group, and the ✕ next to a name removes it (a question keeps at
+   least two groups).
+3. **Drag each item onto its group.** The count at the bottom of the group follows (**2 Items**).
+   The ✕ on an item inside a group sends it back to the items to place.
+
+The question is complete once no item is left to place and every group has a name and at least one
+item. If it still shows **Needs attention** after the last item, go to another question and back.
+Learners see the group names and all the items mixed together, and drag each item into a group.
+
+<Note>
+  **Preview all the questions** shows a Drag and Drop question the way learners get it, without
+  its answer.
+</Note>
 
 <Tip>
   Have your questions in a file already? **⋯ → Import Questions** on the exam's row imports them

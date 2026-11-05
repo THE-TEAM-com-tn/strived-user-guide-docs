@@ -97,14 +97,23 @@ Cliquez sur **Enregistrer et continuer** : l'examen est créé **en brouillon** 
     **Ajouter une nouvelle question**, en bas de la liste.
   </Step>
   <Step title="Type de réponse">
-    **Choix unique**, **Choix multiples**, **Vrai ou Faux** ou **Glisser-déposer**.
+    **Choix unique**, **Choix multiples**, **Vrai ou Faux** ou **Glisser-déposer**. Chacun est
+    présenté plus bas, avec une capture.
   </Step>
   <Step title="Question et réponses">
-    Saisissez la **Question** (une **Image de la question** facultative peut l'accompagner),
-    saisissez les réponses et cliquez sur le rond devant la bonne : elle affiche **Correcte**.
+    Saisissez la **Question** (une **Image de la question** facultative peut l'accompagner), puis
+    remplissez les réponses et marquez la ou les bonnes : voir **Les quatre types de réponse** plus
+    bas.
   </Step>
   <Step title="Explication">
-    Montrée aux apprenants après leur tentative, à côté de la bonne réponse.
+    Cliquez sur **Ajouter une explication** sous les réponses, écrivez pourquoi la bonne réponse est
+    la bonne (gras, couleurs et listes sont disponibles) et cliquez sur le bouton en bas de la
+    fenêtre. La question affiche alors **Ajoutée**, et **Mettre à jour l'explication** la rouvre.
+    Les apprenants la lisent après leur tentative, à côté de la bonne réponse.
+
+    <Frame caption="L'explication d'une question, ouverte avec Mettre à jour l'explication.">
+      <img src="/images/content-manager-guide/fr/exams/11-explanation.png" alt="La fenêtre Mettre à jour l'explication pour la question 1, avec le texte de l'explication et la barre de mise en forme" />
+    </Frame>
   </Step>
   <Step title="Soumettez">
     Quand toutes les questions sont complètes, cliquez sur **Soumettre**.
@@ -114,6 +123,81 @@ Cliquez sur **Enregistrer et continuer** : l'examen est créé **en brouillon** 
 La liste de gauche filtre les questions par type, les recherche et les réordonne par
 glisser-déposer. Une question incomplète est signalée, et l'éditeur refuse de soumettre tant
 qu'elle n'est pas corrigée.
+
+### Les quatre types de réponse
+
+Le **Type de réponse**, en haut d'une question, décide de ce que vous remplissez et de ce que font
+les apprenants. Une question est juste ou fausse dans son ensemble : il n'y a pas de demi-point.
+
+| Type de réponse | Pour | Les apprenants | Comptée juste quand |
+| :-- | :-- | :-- | :-- |
+| **Choix unique** | Une seule bonne réponse parmi plusieurs | Choisissent une réponse | Ils choisissent la bonne réponse |
+| **Choix multiples** | Deux bonnes réponses ou plus | Cochent plusieurs réponses | Ils cochent toutes les bonnes réponses et aucune mauvaise |
+| **Vrai ou Faux** | Une affirmation vraie ou fausse | Choisissent **Vrai** ou **Faux** | Ils choisissent la bonne |
+| **Glisser-déposer** | Classer des éléments dans des groupes | Font glisser chaque élément dans un groupe | Chaque groupe contient exactement ses éléments |
+
+Passer une question à un autre type remet ses réponses à zéro. Revenir au type sous lequel elle
+était enregistrée rétablit ses réponses enregistrées.
+
+### Choix unique
+
+<Frame caption="Une question à choix unique : La charte du projet est marquée Correcte.">
+  <img src="/images/content-manager-guide/fr/exams/07-single-choice.png" alt="Une question à choix unique avec quatre réponses ; la deuxième, La charte du projet, est marquée Correcte" />
+</Frame>
+
+Une nouvelle question commence avec trois réponses vides : saisissez-les, cliquez sur **Ajouter
+une réponse** pour en ajouter, et utilisez la croix ✕ pour en retirer une. Cliquez sur le rond
+devant la bonne réponse : il devient violet et affiche **Correcte**. Une seule réponse peut être
+marquée. La question affiche **Complet** dès que toutes les réponses sont saisies et qu'une est
+marquée.
+
+### Choix multiples
+
+<Frame caption="Une question à choix multiples : deux réponses sur quatre sont marquées correctes.">
+  <img src="/images/content-manager-guide/fr/exams/08-multiple-choices.png" alt="Une question à choix multiples avec quatre réponses ; La revue de sprint et La mêlée quotidienne sont cochées et marquées Correcte, 2 sur 4 marquées correctes" />
+</Frame>
+
+Cochez la case devant chaque bonne réponse : elle affiche **Correcte**, et le compteur en haut à
+droite suit (**2 sur 4 marquées correctes**). Marquez au moins deux réponses ; pour une question à
+une seule bonne réponse, prenez **Choix unique**. Pendant l'examen, les apprenants voient combien
+de réponses cocher (**Veuillez sélectionner 2 réponse(s)**). La note sous les réponses rappelle la
+règle : ils doivent cocher toutes les bonnes réponses et aucune mauvaise.
+
+### Vrai ou Faux
+
+<Frame caption="Une question Vrai ou Faux : Vrai est la bonne réponse.">
+  <img src="/images/content-manager-guide/fr/exams/09-true-or-false.png" alt="Une question Vrai ou Faux : une affirmation sur le Product Owner, et la carte Vrai marquée comme bonne réponse" />
+</Frame>
+
+Écrivez une affirmation dans **Question**. Les deux réponses, **Vrai** et **Faux**, sont déjà là :
+sous **Bonne réponse**, cliquez sur la bonne. Elle devient violette et affiche **Marquée comme bonne
+réponse**.
+
+### Glisser-déposer
+
+<Frame caption="Une question Glisser-déposer : quatre éléments classés dans deux groupes.">
+  <img src="/images/content-manager-guide/fr/exams/10-drag-and-drop.png" alt="Une question Glisser-déposer : le groupe Prédictive contient deux éléments, le groupe Agile deux éléments, et il ne reste aucun élément à placer" />
+</Frame>
+
+1. **Ajoutez les éléments.** Saisissez-en un dans **Écrivez quelque chose et appuyez sur Entrer
+   pour ajouter un élément** et appuyez sur Entrée : il rejoint les éléments à placer, sous le
+   champ. La croix ✕ d'un élément le supprime.
+2. **Nommez les groupes.** Deux sont là au départ, **Groupe 1** et **Groupe 2** : cliquez sur un
+   nom pour le changer. **Créer une catégorie** ajoute un groupe, et la croix ✕ à côté d'un nom le
+   retire (une question garde au moins deux groupes).
+3. **Faites glisser chaque élément sur son groupe.** Le compteur en bas du groupe suit
+   (**2 Articles** : c'est le mot qu'affiche l'application). La croix ✕ d'un élément placé dans un
+   groupe le renvoie parmi les éléments à placer.
+
+La question est complète dès qu'il ne reste aucun élément à placer et que chaque groupe a un nom et
+au moins un élément. Si elle affiche encore **À compléter** après le dernier élément, passez à une
+autre question puis revenez. Les apprenants voient les noms des groupes et tous les éléments
+mélangés, et font glisser chaque élément dans un groupe.
+
+<Note>
+  **Prévisualiser toutes les questions** montre une question Glisser-déposer telle que la voient les
+  apprenants, sans sa réponse.
+</Note>
 
 ---
 

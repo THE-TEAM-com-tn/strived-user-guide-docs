@@ -223,6 +223,14 @@ delete a screenshot when its page stops using it.
   data. Crop out any "OVERFLOWED BY n PIXELS" debug stripe (or shoot a release build).
 - Never save anything on TEST while shooting an editor: open existing items, go through the steps
   that stay local, close with **Cancel** / **Annuler**.
+- **Question-type shots** (`exams/` of the three staff roles, EN + FR: `single-choice`,
+  `multiple-choices`, `true-or-false`, `drag-and-drop`, `explanation`). TEST has no clean True Or
+  False question (its type-1 questions are mislabelled multiple-answer ones) and no English Drag and
+  Drop, so on 05/11/2026 four example questions were added **without saving** to "Exam PgMP test"
+  (admin account, sidebar collapsed, page reloaded afterwards) and the editor panel was cropped. The
+  explanation window is question 1 of "pmp v8 exam 12" (EN) / "PMP Examen Blanc 12 FR" (FR). The
+  editor is the same for every role, so the same files sit in the admin, instructor and content
+  manager folders: retake them together.
 - Image paths: `images/<role>-guide/<topic>/NN-short-name.png` for English staff shots and
   `images/<role>-guide/fr/<topic>/` with the **same file names** for French ones; students use
   `images/student-guide/en/<topic>/` and `images/student-guide/fr/<topic-in-French>/`.
@@ -269,6 +277,10 @@ twins and retake the screenshots.
   `get-started` warns about it. **Create classroom** fails for a content manager ("Something went
   wrong", in French « Une erreur s'est produite — Something went wrong »), so `classrooms` (both
   languages) has a `<Warning>` and documents Preview and Update only.
+- **Question editor** (every staff role): once the last Drag and Drop item is placed, the question
+  can keep showing **Needs attention** / **À compléter** until you move to another question and
+  back. In French the group counter says **Articles** (for Items) and **Créer une catégorie** adds a
+  group. The exams pages say both.
 - **French wording** quoted as the app shows it: **Ajouter une formation** for "Add Education",
   **Détails** for "Basic Info", **Instructeur** or **Formateur** depending on the screen.
 - **Student**: the English pages describe the app as of 04/11/2026; the French ones were written on
