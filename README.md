@@ -11,7 +11,9 @@ French, for each role:
 | Content manager | `content-manager-guide/` | 5 English + 5 French |
 | Admin | `admin-guide/` | 9 English + 9 French |
 
-Screenshots are in `images/<folder>/`, navigation in `docs.json`. Writing and screenshot rules are
+The home page (`index.mdx`, French twin `presentation.mdx`) presents the platform and what each
+role does, with a diagram. Screenshots are in `images/<folder>/`, navigation, header and footer in
+`docs.json`, a little custom CSS in `style.css`. Writing and screenshot rules are
 in [`CLAUDE.md`](CLAUDE.md).
 
 ## Preview

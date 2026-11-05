@@ -3,21 +3,55 @@
   "theme": "mint",
   "name": "Strived User Guide",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#6D28D9"
   },
   "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo/strived-light.png",
+    "dark": "/logo/strived-dark.png",
+    "href": "/"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Introduction",
+        "href": "/"
+      },
+      {
+        "label": "Présentation",
+        "href": "/presentation"
+      },
+      {
+        "label": "Support",
+        "href": "mailto:service.desk@theteam.com.tn"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open Strived",
+      "href": "https://elearning.theteam.com.tn"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Home",
+        "tab": "Introduction",
         "icon": "house",
         "groups": [
           {
-            "group": "Welcome",
+            "group": "In English",
+            "icon": "globe",
             "pages": [
               "index"
+            ]
+          },
+          {
+            "group": "En français",
+            "icon": "language",
+            "pages": [
+              "presentation"
             ]
           }
         ]
@@ -154,22 +188,80 @@
       }
     ]
   },
-  "logo": {
-    "light": "/logo/strived.png",
-    "dark": "/logo/strived.png"
-  },
-  "navbar": {
+  "footer": {
+    "socials": {
+      "website": "https://elearning.theteam.com.tn"
+    },
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:service.desk@theteam.com.tn"
+        "header": "User guides",
+        "items": [
+          {
+            "label": "Student",
+            "href": "/student-guide/first-steps"
+          },
+          {
+            "label": "Instructor",
+            "href": "/instructor-guide/get-started"
+          },
+          {
+            "label": "Content manager",
+            "href": "/content-manager-guide/get-started"
+          },
+          {
+            "label": "Admin",
+            "href": "/admin-guide/get-started"
+          }
+        ]
+      },
+      {
+        "header": "Guides en français",
+        "items": [
+          {
+            "label": "Apprenant",
+            "href": "/student-guide/premiers-pas"
+          },
+          {
+            "label": "Formateur",
+            "href": "/instructor-guide/prise-en-main"
+          },
+          {
+            "label": "Gestionnaire de contenu",
+            "href": "/content-manager-guide/prise-en-main"
+          },
+          {
+            "label": "Admin",
+            "href": "/admin-guide/prise-en-main"
+          }
+        ]
+      },
+      {
+        "header": "Strived",
+        "items": [
+          {
+            "label": "Introduction",
+            "href": "/"
+          },
+          {
+            "label": "Présentation",
+            "href": "/presentation"
+          },
+          {
+            "label": "Open Strived",
+            "href": "https://elearning.theteam.com.tn"
+          }
+        ]
+      },
+      {
+        "header": "Support",
+        "items": [
+          {
+            "label": "Contact support",
+            "href": "mailto:service.desk@theteam.com.tn"
+          }
+        ]
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Open Strived",
-      "href": "https://elearning.theteam.com.tn"
-    }
+    ]
   },
   "contextual": {
     "options": [

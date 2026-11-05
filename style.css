@@ -1,0 +1,14 @@
+/* Strived logo: a little larger than Mintlify's default, in the header and the footer. */
+#navbar .nav-logo {
+  height: 2.125rem;
+}
+#footer .nav-logo {
+  height: 2rem;
+}
+
+/* Footer links: wrap long labels ("Gestionnaire de contenu") instead of cutting them. */
+#footer a {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}

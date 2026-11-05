@@ -1,0 +1,154 @@
+---
+title: "Présentation"
+description: "Strived, le LMS qui prépare les professionnels aux certifications internationales : ce qu'il fait, et ce que fait chaque rôle."
+icon: "house"
+---
+
+<Info>
+  **Le LMS qui prépare les professionnels aux certifications internationales en gestion de projet,
+  agilité, analyse métier et business intelligence, en associant formation avec formateur et
+  apprentissage en autonomie.**
+</Info>
+
+**Strived** est une plateforme d'e-learning conçue par THE TEAM. L'apprenant étudie à son rythme,
+s'entraîne sur des examens blancs construits comme le vrai examen de certification, retrouve son
+formateur dans des classes en direct, et repart avec un certificat. En coulisses, les formateurs
+écrivent le contenu, les gestionnaires de contenu tiennent le catalogue, et les admins font tourner
+la plateforme : commandes, vouchers (bons), coupons de réduction, utilisateurs et notifications.
+
+<Frame caption="Le tableau de bord d'un apprenant : formations en cours, certificats, examens, classement et activité.">
+  <img src="/images/student-guide/fr/premiers-pas/03-tableau-de-bord.png" alt="Le tableau de bord apprenant de Strived avec les cartes de progression, la liste Reprendre l'apprentissage, le classement et le graphique d'activité" />
+</Frame>
+
+---
+
+## Comment fonctionne Strived
+
+Quatre rôles se partagent la plateforme. Les formateurs créent le contenu, les gestionnaires de
+contenu et les admins le publient, les apprenants y accèdent et apprennent, et la plateforme délivre
+les certificats.
+
+```mermaid
+flowchart LR
+    INS["👩‍🏫 <b>Formateur</b><br/>crée formations,<br/>quiz et examens blancs"]
+    CM["🗂️ <b>Gestionnaire de contenu</b><br/>vérifie et publie"]
+    CAT[("📚 <b>Catalogue</b><br/>formations et<br/>examens blancs")]
+    ADM["🛡️ <b>Admin</b><br/>commandes, vouchers,<br/>coupons, utilisateurs,<br/>notifications"]
+    STU["🎓 <b>Apprenant</b><br/>étudie, s'entraîne,<br/>passe des examens blancs"]
+    CLS["💬 <b>Classes</b><br/>séances en direct<br/>et discussion de groupe"]
+    CERT["🏅 <b>Certificat</b><br/>télécharger, imprimer,<br/>partager, vérifier"]
+
+    INS --> CM
+    CM -->|publie| CAT
+    CAT -->|"l'achète, ou l'obtient<br/>avec un voucher"| STU
+    ADM -.->|"confirme les commandes,<br/>envoie les vouchers"| STU
+    INS -->|anime| CLS
+    STU <-->|rejoint| CLS
+    STU -->|"termine<br/>une formation"| CERT
+
+    classDef staff fill:#EDE4FF,stroke:#7C3AED,color:#1F1235
+    classDef learner fill:#DCFCE7,stroke:#16A34A,color:#052E16
+    classDef thing fill:#F4F4F5,stroke:#A1A1AA,color:#18181B
+    classDef award fill:#FEF3C7,stroke:#D97706,color:#451A03
+    class INS,CM,ADM staff
+    class STU learner
+    class CAT,CLS thing
+    class CERT award
+```
+
+Un admin peut aussi faire tout ce que fait un gestionnaire de contenu.
+
+---
+
+## Ce que fait chaque rôle
+
+| Rôle | En bref | Ce qu'il fait sur Strived |
+| :-- | :-- | :-- |
+| **Apprenant** | Apprend et se certifie | Achète des formations et des examens dans la Marketplace ou les débloque avec un voucher (bon), suit les leçons et les quiz, passe des examens blancs et revoit la correction, rejoint ses classes et leur discussion, et télécharge ses certificats. |
+| **Formateur** | Enseigne | Construit son profil public, crée des formations, des quiz et des examens blancs, anime ses classes et leur discussion, prévient ses apprenants, et suit les ventes de son contenu et sa part de chaque commande. |
+| **Gestionnaire de contenu** | Tient le catalogue | Crée et modifie les formations et les examens des formateurs, les publie ou les dépublie, modifie les classes, et range le catalogue avec les catégories et les tags. |
+| **Admin** | Fait tourner la plateforme | Tout ce que fait le gestionnaire de contenu, plus les commandes et les paiements, les vouchers (bons) et les coupons de réduction, les comptes et les rôles, les classes et les salons de discussion, et les notifications aux utilisateurs. |
+
+---
+
+## Ce que reçoivent les apprenants
+
+<CardGroup cols={2}>
+  <Card title="Des formations en autonomie" icon="book-open">
+    Des chapitres de leçons en vidéo et en document, avec des quiz, un lecteur de cours qui reprend
+    là où l'apprenant s'est arrêté, et une barre de progression sur chaque formation.
+  </Card>
+  <Card title="Un simulateur d'examens" icon="stopwatch">
+    Des examens blancs construits comme le vrai : même minuteur, même nombre de questions, même
+    seuil de réussite. Chaque tentative se revoit question par question, avec les explications.
+  </Card>
+  <Card title="Des classes avec formateur" icon="users">
+    Une page par groupe, où le formateur publie le lien de la séance en direct, le programme et les
+    ressources, et une discussion de groupe avec le formateur.
+  </Card>
+  <Card title="Des certificats" icon="award">
+    Délivrés quand la formation est terminée, prêts à être téléchargés, imprimés et partagés, et
+    vérifiables en ligne.
+  </Card>
+  <Card title="De la motivation" icon="trophy">
+    Un tableau de bord de sa progression et un classement. Les meilleurs apprenants gagnent des
+    coupons de réduction.
+  </Card>
+  <Card title="Trois langues" icon="language">
+    Toute l'application existe en anglais, en français et en arabe.
+  </Card>
+</CardGroup>
+
+## Ce que reçoit l'organisation
+
+<CardGroup cols={2}>
+  <Card title="Une marketplace" icon="store">
+    Un catalogue de formations et d'examens blancs avec des catégories, un panier et des coupons de
+    réduction. Les commandes payées par virement, en espèces ou par chèque sont confirmées par un
+    admin.
+  </Card>
+  <Card title="Des vouchers (bons)" icon="ticket">
+    Un voucher donne à un apprenant l'accès gratuit à un ensemble de formations et d'examens, envoyé
+    par e-mail. Pratique pour une entreprise qui inscrit toute une équipe.
+  </Card>
+  <Card title="Une part des ventes pour les formateurs" icon="chart-line">
+    Chaque formateur touche une part des ventes de son contenu et la suit sur sa propre page de
+    ventes, avec des exports PDF et CSV.
+  </Card>
+  <Card title="De la communication" icon="bell">
+    Des notifications dans l'application, envoyées à des utilisateurs choisis, à un rôle ou à toute
+    l'entreprise, aussi par e-mail, tout de suite ou plus tard.
+  </Card>
+</CardGroup>
+
+---
+
+## Lire les guides
+
+Chaque guide parcourt l'application web étape par étape, avec une capture d'écran pour chaque
+étape.
+
+<CardGroup cols={2}>
+  <Card title="Apprenant" icon="graduation-cap" href="/student-guide/premiers-pas">
+    Se connecter, suivre ses formations, passer des examens blancs, obtenir ses certificats et
+    acheter de nouvelles formations.
+  </Card>
+  <Card title="Formateur" icon="chalkboard-user" href="/instructor-guide/prise-en-main">
+    Construire son profil public, créer des formations et des examens, animer ses classes et suivre
+    ses ventes.
+  </Card>
+  <Card title="Gestionnaire de contenu" icon="folder-gear" href="/content-manager-guide/prise-en-main">
+    Publier les formations et les examens, modifier les classes, ranger les catégories et les tags.
+  </Card>
+  <Card title="Admin" icon="user-shield" href="/admin-guide/prise-en-main">
+    Gérer les commandes, les formations, les examens, les vouchers (bons) et les coupons, les
+    utilisateurs, les classes et les notifications.
+  </Card>
+</CardGroup>
+
+<Tip>
+  You prefer English? Read the [introduction to Strived](/).
+
+  Besoin d'aide ? Ouvrez le **Centre d'assistance** dans l'application ou écrivez à
+  [service.desk@theteam.com.tn](mailto:service.desk@theteam.com.tn).
+</Tip>

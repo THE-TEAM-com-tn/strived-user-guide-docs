@@ -1,11 +1,128 @@
 ---
-title: "Welcome to the Strived user guide"
-description: "Step-by-step guides with screenshots for every Strived role, in English and in French."
+title: "Introduction"
+description: "Strived, the LMS that prepares professionals for international certifications: what it does, and what each role does in it."
 icon: "house"
 ---
 
-Strived is the e-learning platform by THE TEAM. These guides walk you through the **web app**, one
-task at a time, with a screenshot for each step. Pick your role to start.
+<Info>
+  **The LMS that prepares professionals for international certifications in project management,
+  agility, business analysis and business intelligence — combining instructor-led training with
+  self-paced learning.**
+</Info>
+
+**Strived** is an e-learning platform made by THE TEAM. A learner studies at their own pace,
+practises on mock exams built like the real certification exam, meets their instructor in live
+classrooms, and leaves with a certificate. Behind the scenes, instructors write the content, content
+managers keep the catalog in order, and admins run the platform: orders, vouchers, coupons, users
+and notifications.
+
+<Frame caption="A learner's dashboard: trainings in progress, certificates, exams, leaderboard and activity.">
+  <img src="/images/student-guide/en/first-steps/03-dashboard.png" alt="The Strived student dashboard with progress cards, the Continue learning list, the leaderboard and the learning activity chart" />
+</Frame>
+
+---
+
+## How Strived works
+
+Four roles share the platform. Instructors create the content, content managers and admins publish
+it, learners get access to it and learn, and the platform hands out the certificates.
+
+```mermaid
+flowchart LR
+    INS["👩‍🏫 <b>Instructor</b><br/>creates trainings,<br/>quizzes and mock exams"]
+    CM["🗂️ <b>Content manager</b><br/>reviews and publishes"]
+    CAT[("📚 <b>Catalog</b><br/>trainings and<br/>mock exams")]
+    ADM["🛡️ <b>Admin</b><br/>orders, vouchers,<br/>coupons, users,<br/>notifications"]
+    STU["🎓 <b>Student</b><br/>studies, practises,<br/>takes mock exams"]
+    CLS["💬 <b>Classrooms</b><br/>live sessions<br/>and group chat"]
+    CERT["🏅 <b>Certificate</b><br/>download, print,<br/>share, verify"]
+
+    INS --> CM
+    CM -->|publishes| CAT
+    CAT -->|"buys it, or gets<br/>it with a voucher"| STU
+    ADM -.->|"confirms orders,<br/>sends vouchers"| STU
+    INS -->|leads| CLS
+    STU <-->|joins| CLS
+    STU -->|"completes<br/>a training"| CERT
+
+    classDef staff fill:#EDE4FF,stroke:#7C3AED,color:#1F1235
+    classDef learner fill:#DCFCE7,stroke:#16A34A,color:#052E16
+    classDef thing fill:#F4F4F5,stroke:#A1A1AA,color:#18181B
+    classDef award fill:#FEF3C7,stroke:#D97706,color:#451A03
+    class INS,CM,ADM staff
+    class STU learner
+    class CAT,CLS thing
+    class CERT award
+```
+
+An admin can also do everything a content manager does.
+
+---
+
+## What each role does
+
+| Role | In short | What they do on Strived |
+| :-- | :-- | :-- |
+| **Student** | Learns and gets certified | Buys trainings and exams in the Marketplace or unlocks them with a voucher, studies the lessons and quizzes, takes mock exams and reviews the correction, joins classrooms and their chat, and downloads their certificates. |
+| **Instructor** | Teaches | Builds a public profile, creates trainings, quizzes and mock exams, leads classrooms and their chat, notifies their learners, and follows the sales of their content and their share of each order. |
+| **Content manager** | Keeps the catalog in order | Creates and updates trainings and exams for the instructors, publishes or unpublishes them, updates classrooms, and organizes the catalog with categories and tags. |
+| **Admin** | Runs the platform | Everything the content manager does, plus orders and payments, vouchers and discount coupons, user accounts and roles, classrooms and chatrooms, and notifications to users. |
+
+---
+
+## What learners get
+
+<CardGroup cols={2}>
+  <Card title="Self-paced trainings" icon="book-open">
+    Chapters of video and document lessons with quizzes, a course player that remembers where the
+    learner stopped, and a progress bar on every training.
+  </Card>
+  <Card title="Exam simulator" icon="stopwatch">
+    Mock exams built like the real one: same timer, same number of questions, same pass mark.
+    Every attempt can be reviewed question by question, with explanations.
+  </Card>
+  <Card title="Instructor-led classrooms" icon="users">
+    One page per group, where the instructor posts the live-session link, the plan and the
+    resources, and a group chat with the instructor.
+  </Card>
+  <Card title="Certificates" icon="award">
+    Issued when a training is complete, ready to download, print and share, and verifiable online.
+  </Card>
+  <Card title="Motivation" icon="trophy">
+    A dashboard of the learner's progress and a leaderboard. The top learners earn discount
+    coupons.
+  </Card>
+  <Card title="Three languages" icon="language">
+    The whole app is available in English, French and Arabic.
+  </Card>
+</CardGroup>
+
+## What the organization gets
+
+<CardGroup cols={2}>
+  <Card title="A marketplace" icon="store">
+    A catalog of trainings and mock exams with categories, a cart and discount coupons. Orders paid
+    by bank transfer, in cash or by cheque are confirmed by an admin.
+  </Card>
+  <Card title="Vouchers" icon="ticket">
+    A voucher gives a learner free access to a set of trainings and exams, sent by e-mail. Handy for
+    a company that enrolls a whole team.
+  </Card>
+  <Card title="Instructor revenue share" icon="chart-line">
+    Each instructor gets a share of the sales of their content and follows it on their own sales
+    page, with PDF and CSV exports.
+  </Card>
+  <Card title="Communication" icon="bell">
+    In-app notifications, sent to chosen users, a role or the whole company, by e-mail too, now or
+    later.
+  </Card>
+</CardGroup>
+
+---
+
+## Read the guides
+
+Every guide is a step-by-step walkthrough of the web app, with a screenshot for each step.
 
 <CardGroup cols={2}>
   <Card title="Student" icon="graduation-cap" href="/student-guide/first-steps">
@@ -22,36 +139,9 @@ task at a time, with a screenshot for each step. Pick your role to start.
   </Card>
 </CardGroup>
 
----
-
-## Bienvenue
-
-Strived est la plateforme d'e-learning de THE TEAM. Ces guides vous accompagnent dans
-l'**application web**, une tâche à la fois, avec une capture d'écran pour chaque étape. Choisissez
-votre rôle pour commencer.
-
-<CardGroup cols={2}>
-  <Card title="Apprenant" icon="graduation-cap" href="/student-guide/premiers-pas">
-    Se connecter, suivre ses formations, passer des examens blancs, obtenir ses certificats et
-    acheter de nouvelles formations.
-  </Card>
-  <Card title="Formateur" icon="chalkboard-user" href="/instructor-guide/prise-en-main">
-    Construire son profil public, créer des formations et des examens, animer ses classes et suivre
-    ses ventes.
-  </Card>
-  <Card title="Gestionnaire de contenu" icon="folder-gear" href="/content-manager-guide/prise-en-main">
-    Publier les formations et les examens, modifier les classes, ranger les catégories et les tags.
-  </Card>
-  <Card title="Admin" icon="user-shield" href="/admin-guide/prise-en-main">
-    Gérer les commandes, les formations, les examens, les vouchers (bons) et les coupons, les
-    utilisateurs, les classes et les notifications.
-  </Card>
-</CardGroup>
-
 <Tip>
-  Need help? Open the **Help Center** in the app or write to
-  [service.desk@theteam.com.tn](mailto:service.desk@theteam.com.tn).
+  Vous préférez le français ? Lisez la [présentation de Strived](/presentation).
 
-  Besoin d'aide ? Ouvrez le **Centre d'assistance** dans l'application ou écrivez à
+  Need help? Open the **Help Center** in the app or write to
   [service.desk@theteam.com.tn](mailto:service.desk@theteam.com.tn).
 </Tip>

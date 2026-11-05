@@ -45,7 +45,14 @@ It is written for people who use the app, not for developers. Keep out of it:
   sees and does. Bold UI labels and a file type (a JSON file to import) are fine.
 
 The only code on the site is the HTML of the "Reuse the Google Meet card" accordion in the admin and
-instructor classroom pages: staff paste it into the classroom editor's code view.
+instructor classroom pages (staff paste it into the classroom editor's code view) and the Mermaid
+source of the "How Strived works" diagram, which the site draws as a picture.
+
+The two introduction pages (`index.mdx` in English, `presentation.mdx` in French, twins) are also a
+**presentation for people thinking of buying the platform**: what Strived is, the tagline, the
+diagram, what each role does, what learners and the organization get, then the way into the
+guides. Keep them short, concrete and true to the app: claim only what the guides document (online
+payment and the course player's AI assistant are not available yet, so they are not sold there).
 
 **Origin.** Every guide was copied on 05/11/2026 from `LMS_Documentation` (branch `chat+ai`,
 commit `0a7358d`): `user-guide/` became `student-guide/` here (links and image paths renamed), the
@@ -58,8 +65,10 @@ in the other too (ask the user when unsure which copy wins).
 ## 2. Repository layout
 
 ```
-docs.json                 # Mintlify config: name, colors, logo, navbar and the NAVIGATION (every page must be listed)
-index.mdx                 # Home page (English + French): one card per role
+docs.json                 # Mintlify config: name, colors, logo, navbar, footer and the NAVIGATION (every page must be listed)
+index.mdx                 # Home page = "Introduction" (English): presentation of Strived + diagram + role cards
+presentation.mdx          # Its French twin, "Présentation"
+style.css                 # Small custom CSS Mintlify loads on every page (logo size, footer link wrapping)
 student-guide/            # 9 English + 9 French guides for students
 instructor-guide/         # 6 English + 6 French guides for instructors
 content-manager-guide/    # 5 English + 5 French guides for content managers
@@ -69,10 +78,19 @@ images/
   instructor-guide/<topic>/   instructor-guide/fr/<topic>/
   content-manager-guide/<topic>/   content-manager-guide/fr/<topic>/
   admin-guide/<topic>/        admin-guide/fr/<topic>/
-logo/strived.png  favicon.png   # the Strived logo, cropped from LMS_Frontend/web/brand/logo-512.png
+logo/strived-light.png    # header + footer logo on light pages: the Strived logo + "Strived" in #6D28D9
+logo/strived-dark.png     # same on dark pages, name in #EDE9FE
+favicon.png               # the Strived logo alone
 AGENTS.md                 # points other AI tools to this file
-README.md  LICENSE  .mintignore
+README.md  .mintignore
 ```
+
+The logo files are built from `LMS_Frontend/assets/images/splash_logo_strived.png` (the logo) and
+`LMS_Frontend/assets/fonts/poppins/Poppins-SemiBold.ttf` (the name), the favicon from
+`LMS_Frontend/web/brand/logo-512.png`. The logo alone is unreadable at the 28-34 px height Mintlify
+gives it, hence the name beside it. Rebuild both variants together if the logo changes. The
+Mintlify starter files (quickstart page, starter logo, favicon and LICENSE, the
+"Documentation" / "Blog" links to mintlify.com) were removed on purpose: don't bring them back.
 
 Every image in `images/` is used by a page, and every image a page uses exists. Keep it that way:
 delete a screenshot when its page stops using it.
@@ -81,15 +99,26 @@ delete a screenshot when its page stops using it.
 
 ## 3. Navigation (`docs.json`)
 
-- One **tab per role**: Home (`index`), Student, Instructor, Content Manager, Admin. Each role tab
-  has two groups, **"Guides in English"** (icon `globe`) and **"Guides en français"** (icon
+- **Header**, top row: the logo (links to `/`), the search, the links **Introduction** (`/`),
+  **Présentation** (`/presentation`) and **Support** (`mailto:service.desk@theteam.com.tn`, the
+  address the app's Help Center shows), and the **Open Strived** button
+  (`https://elearning.theteam.com.tn`, the production app).
+- **Header**, tab row: **Introduction** (groups "In English" → `index`, "En français" →
+  `presentation`), then one **tab per role**: Student, Instructor, Content Manager, Admin. Each role
+  tab has two groups, **"Guides in English"** (icon `globe`) and **"Guides en français"** (icon
   `language`), in the same order, so twins sit at the same position.
+- **Footer**: the logo, a globe icon to the app (`socials.website`), and four link columns (max 4 in
+  Mintlify): "User guides" (each role's first English page), "Guides en français" (same in
+  French), "Strived" (Introduction, Présentation, Open Strived), "Support" (**Contact support**,
+  mailto). Footer links must be URLs or site paths: Mintlify rejects `tel:`, so the support phone
+  number is not there.
 - A page doesn't appear on the site until its path (without `.mdx`) is in `docs.json`.
 - File names are kebab-case: English slugs for English pages, French slugs for French pages.
-- The navbar has **Support** (`mailto:service.desk@theteam.com.tn`, the address the app's Help
-  Center shows) and an **Open Strived** button (`https://elearning.theteam.com.tn`, the production
-  app). The contextual menu keeps copy / view / ChatGPT / Claude / Perplexity only; the developer
+- Colors are Strived's purple (`#7C3AED`, light `#A78BFA`, dark `#6D28D9`), to match the logo and
+  the app. The contextual menu keeps copy / view / ChatGPT / Claude / Perplexity only; the developer
   entries (MCP, Cursor, VS Code) were removed on purpose.
+- `style.css` targets Mintlify's `#navbar` / `#footer` ids and its `.nav-logo` class; check it still
+  applies after a Mintlify update (logo size, no "…" in long footer labels).
 
 ---
 
@@ -209,6 +238,11 @@ npm i -g mint       # once
 mint dev            # preview at http://localhost:3000 (run next to docs.json)
 mint broken-links   # check internal links before pushing
 ```
+
+On the user's Mac, `mint dev` / `mint validate` stop with `EACCES … rmdir ~/.mintlify-last/mint`
+(that folder belongs to root). Either remove it once (`sudo rm -rf ~/.mintlify-last`) or run the
+preview with another home folder: `HOME=/some/scratch/folder mint dev --port 3333 --no-open`.
+`mint dev` also reports docs.json schema errors (it is how the `tel:` footer link was caught).
 
 Before a push, also check that every page in `docs.json` exists, every `/images/…` a page uses
 exists, no image is left unused, and no file holds raw bidi characters.
