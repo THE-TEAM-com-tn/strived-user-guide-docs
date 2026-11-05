@@ -1,4 +1,2 @@
-.idea/vcs.xml
-.idea/strived-user-guide-docs.iml
-.idea/php.xml
-.idea/modules.xml
+# JetBrains IDE settings (PhpStorm / WebStorm): local to each machine
+.idea/
