@@ -1,0 +1,179 @@
+---
+title: "Manage Users"
+description: "Find a user, create an account, change a role or a password, look up a learner's activity and manage instructors. Step by step, with screenshots."
+icon: "users-gear"
+---
+
+**Users** lists every account of the platform: learners, instructors, content managers and
+admins. This guide shows you how to create and update accounts, and where to see what a learner
+has done.
+
+<Note>
+  Everything below is for the **web app** on a computer, signed in as an **Admin**.
+</Note>
+
+---
+
+## Table of contents
+
+- **Step 1 — Find a user**
+- **Step 2 — Create an account**
+- **Step 3 — Update an account and change its role**
+- **Step 4 — Look up a learner's activity**
+- **Step 5 — Manage an instructor**
+- **Step 6 — Ban or archive an account**
+- **Good to know**
+
+---
+
+## Step 1 — Find a user
+
+Click **Users** in the sidebar.
+
+<Frame caption="Users.">
+  <img src="/images/admin-guide/users/01-users.png" alt="The Users table with usernames, e-mails, statuses, roles and creation dates" />
+</Frame>
+
+- **Search…** finds a user by name or e-mail.
+- The five icons to the left of **Active** / **Archived** / **All records** filter by role:
+  **All**, **Students**, **Instructors**, **Content Managers** and **Admins**.
+
+| Column | What it shows |
+| :-- | :-- |
+| **Username** | First and last name. |
+| **Email** | The address the user signs in with. |
+| **Status** | **Active**, and whether the e-mail is confirmed (**Email Verified** in green, **Email Not Verified** in red). |
+| **Role** | **Student**, **Instructor**, **Content Manager** or **Administrator**. |
+| **Created at** | When the account was created. |
+
+---
+
+## Step 2 — Create an account
+
+Click **Create User** at the top right.
+
+<Frame caption="Create User.">
+  <img src="/images/admin-guide/users/03-create-user.png" alt="The Create User window with the profile picture, first name, last name, e-mail and password" />
+</Frame>
+
+<Steps>
+  <Step title="Profile picture (optional)">
+    **Upload photo**. A square image looks best.
+  </Step>
+  <Step title="Name and e-mail">
+    **First name**, **Last name** and **Email**.
+  </Step>
+  <Step title="Password">
+    6 to 16 characters, with an uppercase letter, a lowercase letter, a digit and a symbol
+    (`-_!@#%.?:`). The eye shows what you typed.
+  </Step>
+  <Step title="Create">
+    Click **Create User**.
+  </Step>
+</Steps>
+
+New accounts start as **Student** and receive an e-mail to confirm their address. To make someone
+an instructor or an admin, change the role afterwards (Step 3).
+
+---
+
+## Step 3 — Update an account and change its role
+
+Open **⋯ → Update** on the user's row.
+
+<Frame caption="Update User.">
+  <img src="/images/admin-guide/users/04-update-user.png" alt="The Update User window with the name, the locked e-mail, the new password fields and the four roles" />
+</Frame>
+
+- **First name** and **Last name** can be changed. The **Email** is locked.
+- **New Password** / **Confirm password** set a new password. Leave both empty to keep the current
+  one.
+- **Role**: pick **Student** (takes trainings and exams), **Instructor** (writes and teaches
+  trainings), **Content Manager** (manages trainings and exams) or **Administrator** (full access to
+  the platform). **Current** marks the role the user has now.
+
+Click **Save changes**.
+
+<Warning>
+  **Administrator** gives full access to the platform, including orders, payments and every user.
+  Give it only to people who need it.
+</Warning>
+
+---
+
+## Step 4 — Look up a learner's activity
+
+On a student's row, open **⋯ → Learner Analytics**.
+
+<Frame caption="Learner Analytics.">
+  <img src="/images/admin-guide/users/02-learner-analytics.png" alt="The Learner Analytics page of Student Demo with the Orders tab open" />
+</Frame>
+
+The card at the top shows the learner's name, e-mail, bio, date of birth and phone number (the copy
+icons copy the e-mail and the phone number). The tabs below give the full picture, each with a
+counter:
+
+| Tab | What you find |
+| :-- | :-- |
+| **Orders** | Every order with its reference, status, date, items and amount. |
+| **Cart** | What is waiting in the learner's cart. |
+| **Trainings** | The trainings the learner has access to. |
+| **Exams** | The exams the learner has access to. |
+| **Certificates** | The certificates the learner has earned. |
+| **Classrooms & Chat** | The classrooms the learner belongs to. |
+| **Notifications** | The notifications the learner has received. |
+
+<Tip>
+  A learner calls about a payment or a missing training? Start here: **Orders** and **Trainings**
+  usually answer the question.
+</Tip>
+
+---
+
+## Step 5 — Manage an instructor
+
+An instructor's **⋯** menu has two extra items.
+
+**Set Revenue** opens **Instructor Revenue**: type the instructor's default **Revenue** percentage
+(for example `30`), then **Confirm**. This is the share of each sale the instructor earns. Set it
+before you create a training or an exam for this instructor: the editor refuses to continue while
+it is missing (*"Missing Revenue for Selected Instructor"*).
+
+**Preview profile** opens the **Instructor Profile**: bio, LinkedIn link, **About me**,
+**Skills** and **Certificates**.
+
+<Frame caption="An instructor's profile.">
+  <img src="/images/admin-guide/users/05-instructor-profile.png" alt="The Instructor Profile page with the verified badge, the Unverify account button, About me, Skills and Certificates" />
+</Frame>
+
+A verified instructor shows a purple badge next to their name. **Unverify account** removes it;
+on an unverified instructor the button verifies the account.
+
+---
+
+## Step 6 — Ban or archive an account
+
+| Action | What it does | How to undo it |
+| :-- | :-- | :-- |
+| **Ban** | Blocks the account: the user can no longer use the platform. The platform asks *"Are you sure you want to Ban this user ?"* first. | **⋯ → Unban** |
+| **Archive** | Removes the account from the list. | **Archived** icon, then **Restore** |
+
+---
+
+## Good to know
+
+<AccordionGroup>
+  <Accordion title="Can I change a user's e-mail?">
+    No: the e-mail is the login and stays locked in **Update User**. Create a new account with the
+    right e-mail if needed.
+  </Accordion>
+  <Accordion title="A user forgot their password">
+    Set a new one in **⋯ → Update** (Step 3), fill in **New Password** and **Confirm password**, and
+    give it to them.
+  </Accordion>
+  <Accordion title="How do I give a learner a training without an order?">
+    From **Trainings**: **⋯ → Assign learners** — see
+    [Manage trainings](/admin-guide/manage-trainings). For several trainings and exams at once, use a
+    voucher — see [Vouchers and coupons](/admin-guide/vouchers-and-coupons).
+  </Accordion>
+</AccordionGroup>

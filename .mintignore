@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Repo notes for maintainers and AI assistants
+CLAUDE.md
+AGENTS.md

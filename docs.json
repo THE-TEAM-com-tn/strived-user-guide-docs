@@ -1,53 +1,174 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Strived User Guide",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
+        "tab": "Home",
+        "icon": "house",
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "index"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Student",
+        "icon": "graduation-cap",
+        "groups": [
+          {
+            "group": "Guides in English",
+            "icon": "globe",
+            "pages": [
+              "student-guide/first-steps",
+              "student-guide/use-a-voucher",
+              "student-guide/study-a-training",
+              "student-guide/take-a-mock-exam",
+              "student-guide/review-your-exam-attempts",
+              "student-guide/get-your-certificates",
+              "student-guide/classrooms-and-chat",
+              "student-guide/buy-a-training",
+              "student-guide/manage-your-account"
+            ]
+          },
+          {
+            "group": "Guides en français",
+            "icon": "language",
+            "pages": [
+              "student-guide/premiers-pas",
+              "student-guide/utiliser-un-voucher",
+              "student-guide/suivre-une-formation",
+              "student-guide/passer-un-examen-blanc",
+              "student-guide/revoir-ses-tentatives",
+              "student-guide/obtenir-ses-certificats",
+              "student-guide/classes-et-discussion",
+              "student-guide/acheter-une-formation",
+              "student-guide/gerer-son-compte"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Instructor",
+        "icon": "chalkboard-user",
+        "groups": [
+          {
+            "group": "Guides in English",
+            "icon": "globe",
+            "pages": [
+              "instructor-guide/get-started",
+              "instructor-guide/build-your-public-profile",
+              "instructor-guide/create-and-update-trainings",
+              "instructor-guide/create-exams-and-quizzes",
+              "instructor-guide/classrooms-and-chatrooms",
+              "instructor-guide/track-your-sales"
+            ]
+          },
+          {
+            "group": "Guides en français",
+            "icon": "language",
+            "pages": [
+              "instructor-guide/prise-en-main",
+              "instructor-guide/construire-son-profil-public",
+              "instructor-guide/creer-et-modifier-des-formations",
+              "instructor-guide/creer-des-examens-et-des-quiz",
+              "instructor-guide/classes-et-salons-de-discussion",
+              "instructor-guide/suivre-ses-ventes"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Content Manager",
+        "icon": "folder-gear",
+        "groups": [
+          {
+            "group": "Guides in English",
+            "icon": "globe",
+            "pages": [
+              "content-manager-guide/get-started",
+              "content-manager-guide/manage-trainings",
+              "content-manager-guide/manage-exams-and-quizzes",
+              "content-manager-guide/classrooms",
+              "content-manager-guide/categories-and-tags"
+            ]
+          },
+          {
+            "group": "Guides en français",
+            "icon": "language",
+            "pages": [
+              "content-manager-guide/prise-en-main",
+              "content-manager-guide/gerer-les-formations",
+              "content-manager-guide/gerer-les-examens-et-quiz",
+              "content-manager-guide/classes",
+              "content-manager-guide/categories-et-tags"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Admin",
+        "icon": "user-shield",
+        "groups": [
+          {
+            "group": "Guides in English",
+            "icon": "globe",
+            "pages": [
+              "admin-guide/get-started",
+              "admin-guide/manage-orders",
+              "admin-guide/manage-trainings",
+              "admin-guide/manage-exams-and-quizzes",
+              "admin-guide/vouchers-and-coupons",
+              "admin-guide/manage-users",
+              "admin-guide/classrooms-and-chatrooms",
+              "admin-guide/send-notifications",
+              "admin-guide/categories-and-tags"
+            ]
+          },
+          {
+            "group": "Guides en français",
+            "icon": "language",
+            "pages": [
+              "admin-guide/prise-en-main",
+              "admin-guide/gerer-les-commandes",
+              "admin-guide/gerer-les-formations",
+              "admin-guide/gerer-les-examens-et-quiz",
+              "admin-guide/vouchers-et-coupons",
+              "admin-guide/gerer-les-utilisateurs",
+              "admin-guide/classes-et-salons-de-discussion",
+              "admin-guide/envoyer-des-notifications",
+              "admin-guide/categories-et-tags"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/strived.png",
+    "dark": "/logo/strived.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "href": "mailto:service.desk@theteam.com.tn"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Open Strived",
+      "href": "https://elearning.theteam.com.tn"
     }
   },
   "contextual": {
@@ -56,17 +177,12 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "perplexity"
     ]
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+  "errors": {
+    "404": {
+      "title": "Page Not Found - 404"
     }
   }
 }

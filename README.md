@@ -1,55 +1,29 @@
-# Mintlify Starter Kit
+# Strived User Guide
 
-Use the starter kit to get your docs deployed and ready to customize.
+The user guide of **Strived**, the e-learning platform by THE TEAM, built with
+[Mintlify](https://mintlify.com). Step-by-step guides with screenshots of the web app, in English and
+French, for each role:
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+| Role | Folder | Guides |
+| :-- | :-- | :-- |
+| Student | `student-guide/` | 9 English + 9 French |
+| Instructor | `instructor-guide/` | 6 English + 6 French |
+| Content manager | `content-manager-guide/` | 5 English + 5 French |
+| Admin | `admin-guide/` | 9 English + 9 French |
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+Screenshots are in `images/<folder>/`, navigation in `docs.json`. Writing and screenshot rules are
+in [`CLAUDE.md`](CLAUDE.md).
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## AI-assisted writing
-
-Set up your AI coding tool to work with Mintlify:
+## Preview
 
 ```bash
-npx skills add https://mintlify.com/docs
-```
-
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
-
-See the guides for [Claude Code](https://www.mintlify.com/docs/guides/claude-code), [Codex](https://www.mintlify.com/docs/guides/codex), [Cursor](https://www.mintlify.com/docs/guides/cursor), and [Devin Desktop](https://www.mintlify.com/docs/guides/devin-desktop) for tool-specific setup.
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
 npm i -g mint
+mint dev            # http://localhost:3000
+mint broken-links
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+## Publishing
 
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+Once the Mintlify GitHub app is connected to this repo
+([dashboard](https://dashboard.mintlify.com/settings/organization/github-app)), every push to `main`
+is deployed.

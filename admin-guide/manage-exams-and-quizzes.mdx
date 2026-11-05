@@ -1,0 +1,193 @@
+---
+title: "Manage Exams and Quizzes"
+description: "Create a standalone mock exam or a quiz attached to a training, write its questions, preview it and publish it. Step by step, with screenshots."
+icon: "file-pen"
+---
+
+**Quizzes** in the sidebar holds two kinds of tests, built with the same editor:
+
+| | **Exam** | **Quiz** |
+| :-- | :-- | :-- |
+| What it is | A standalone mock exam, sold on its own in the **Exam Catalog**. | A test inside a training, placed in one of its chapters. |
+| Learners find it in | **My Content → My Exam Simulator**. | The training's **Course Content** panel. |
+| Has its own price | Yes. | No: it comes with the training. |
+
+<Note>
+  Everything below is for the **web app** on a computer, signed in as an **Admin**.
+</Note>
+
+---
+
+## Table of contents
+
+- **Step 1 — Open the exams and quizzes**
+- **Step 2 — Preview an exam and its questions**
+- **Step 3 — Create an exam or a quiz: Training and Chapter**
+- **Step 4 — Basic Info**
+- **Step 5 — Write the questions**
+- **Step 6 — Publish and give access**
+- **Good to know**
+
+---
+
+## Step 1 — Open the exams and quizzes
+
+Click **Quizzes** in the sidebar. Two tabs sit at the top: **Exams** and **Quizzes**.
+
+<Frame caption="The Exams tab.">
+  <img src="/images/admin-guide/exams/01-exams.png" alt="The Exams table with titles, instructor, learners, number of questions, price and status" />
+</Frame>
+
+The **Exams** tab lists every standalone exam with its **Created By** instructor, **Learners**,
+number of **Questions**, **Price** and **Status** (**Published** or **Draft**).
+
+<Frame caption="The Quizzes tab, grouped by training.">
+  <img src="/images/admin-guide/exams/07-quizzes.png" alt="The Quizzes table with each quiz's related training and related chapter" />
+</Frame>
+
+The **Quizzes** tab adds the **Related Training** and **Related Chapter** of each quiz.
+**Grouped by training** keeps the quizzes of the same training together.
+
+The **⋯** menu of a row offers:
+
+| Action | Exams | Quizzes |
+| :-- | :-- | :-- |
+| **Preview** | ✓ | ✓ |
+| **Draft** / **Publish** | ✓ | ✓ |
+| **Update** | ✓ | ✓ |
+| **Assign learners** / **Unassign learners** | ✓ | — (they come with the training) |
+| **Learners' emails** | ✓ | — |
+| **Import Questions** | ✓ | ✓ |
+| **Archive** | ✓ | ✓ |
+
+---
+
+## Step 2 — Preview an exam and its questions
+
+**⋯ → Preview** opens the exam's page as learners see it: number of questions, duration, attempts,
+breaks, passing grade and views.
+
+<Frame caption="Previewing an exam.">
+  <img src="/images/admin-guide/exams/02-exam-preview.png" alt="The exam page of PMP Examen Blanc 12 FR with its rules and the Preview all the questions button" />
+</Frame>
+
+Click **Preview all the questions** to go through the questions one by one, each with its
+**Correct Answer** in green and its **Explanation**. The **Question panel** on the right jumps to
+any question, and **Quit Exam** brings you back. Nothing is recorded: it is a read-only preview.
+
+<Frame caption="Previewing the questions.">
+  <img src="/images/admin-guide/exams/03-questions-preview.png" alt="Question 1 of 199 with the correct answer highlighted, the explanation and the question panel" />
+</Frame>
+
+---
+
+## Step 3 — Create an exam or a quiz: Training and Chapter
+
+Click **Create Exam** (on the **Exams** tab) or **Create Quiz** (on the **Quizzes** tab). The
+editor has four steps: **Training**, **Chapter**, **Basic Info** and **Questions**.
+
+<Frame caption="Step 1: pick a training, or skip it for a standalone exam.">
+  <img src="/images/admin-guide/exams/04-create-exam-training.png" alt="The Select a Training step, with the list of trainings and the Your selection panel" />
+</Frame>
+
+<Steps>
+  <Step title="For a quiz: pick the training">
+    Tick the training the quiz belongs to (**Search trainings by name…** finds it), then
+    **Continue to chapters** and pick the chapter it goes into.
+  </Step>
+  <Step title="For an exam: skip both steps">
+    Pick nothing and click **Continue** twice. The steps show **Standalone exam**: the exam is sold
+    on its own.
+  </Step>
+</Steps>
+
+**Your selection** on the right recalls your choice, and **Reset** clears it. Changing the
+training resets the chapter, but keeps the basic info and the questions.
+
+---
+
+## Step 4 — Basic Info
+
+<Frame caption="Step 3: Basic Info.">
+  <img src="/images/admin-guide/exams/05-create-exam-basic-info.png" alt="The Basic Info step with the Identity, Pricing & revenue and Attempt rules sections, and the checklist" />
+</Frame>
+
+| Section | Fields |
+| :-- | :-- |
+| **Identity** | **Exam Name**, **Description** (optional, learners read it before they start), **Exam Category** and **Instructor**. |
+| **Pricing & revenue** | **Price**, optional **Discounted Price**, **Instructor revenue percentage**. The line underneath shows what the student pays, what the instructor earns and what the platform keeps. |
+| **Attempt rules** | **Exam Duration** (hours and minutes), **Max Attempts** (0 means unlimited), **Passing Percentage %** (70 by default) and **Has pause ?**: a break after a set number of questions, during which the timer stops. |
+
+The **Checklist** on the right counts what is left, and the **Catalog Preview** shows the card.
+Click **Save & continue**: the exam is created **as a draft**, so you can add its questions.
+
+---
+
+## Step 5 — Write the questions
+
+<Frame caption="Step 4: Questions.">
+  <img src="/images/admin-guide/exams/06-exam-questions.png" alt="The Questions step with the list of questions on the left and the editor of question 1 on the right" />
+</Frame>
+
+<Steps>
+  <Step title="Add a question">
+    Click **Add New Question** at the bottom of the list.
+  </Step>
+  <Step title="Choose the Answer type">
+    **Single Choice** (one correct answer), **Multiple Choices** (several correct), **True Or
+    False** (a statement to judge) or **Drag and Drop** (match items to groups).
+  </Step>
+  <Step title="Write the question">
+    Type the **Question**. You can add a **Question image** (JPG, PNG, GIF or WEBP) with **Choose
+    image**.
+  </Step>
+  <Step title="Write the answers">
+    Type each answer, **Add answer** for more, and click the circle in front of the right one: it
+    turns purple and shows **Correct**.
+  </Step>
+  <Step title="Add an explanation">
+    The **Explanation** is shown to learners after their attempt, next to the correct answer.
+  </Step>
+  <Step title="Submit">
+    When every question is complete, click **Submit** at the top right.
+  </Step>
+</Steps>
+
+The list on the left shows every question with its type. Filter it by type, search it with
+**Search questions…**, drag the handles to reorder, and use **Previous question** / **Next
+question** to move through them. A question with something missing is flagged: the editor will not
+submit until it is fixed. The bin icon at the top right of a question deletes it.
+
+<Tip>
+  Have your questions in a file already? **⋯ → Import Questions** on the exam's row imports them
+  from a JSON file. To get a backup, the cloud icon at the top right of the tab offers **Single
+  Export** (one exam or quiz) and **Export All** (all of them in a ZIP file).
+</Tip>
+
+---
+
+## Step 6 — Publish and give access
+
+- **Publish**: open **⋯** on the row and click **Publish**. The exam appears in the **Exam
+  Catalog** (a quiz appears in its training's chapter). **Draft** hides it again.
+- **Give an exam without an order**: **⋯ → Assign learners**, tick the learners, **Confirm**. It
+  appears in their **My Exam Simulator**. **Unassign learners** removes it.
+- **Change it later**: **⋯ → Update** opens the same four steps. The header shows whether the exam
+  is **Published**.
+
+---
+
+## Good to know
+
+<AccordionGroup>
+  <Accordion title="When do learners see the explanations?">
+    After an attempt: in **Review Answers**, each question has a **See Explanation** button next to
+    the right answer.
+  </Accordion>
+  <Accordion title="How many attempts do learners get?">
+    The number set in **Max Attempts**; 0 means unlimited. Each start of the exam uses one attempt.
+  </Accordion>
+  <Accordion title="Where do I give several exams and trainings at once?">
+    With a **voucher**: see [Vouchers and coupons](/admin-guide/vouchers-and-coupons).
+  </Accordion>
+</AccordionGroup>
