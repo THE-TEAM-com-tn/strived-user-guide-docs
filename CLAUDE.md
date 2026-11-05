@@ -53,7 +53,11 @@ in French, twins with the same title) are also a
 **presentation for people thinking of buying the platform**: what Strived is, the tagline, the
 diagram, what each role does, what learners get, **Strived on the phone** (six iPhone shots: three
 welcome-tour steps, the dashboard, My Trainings, a classroom chat), what the organization gets,
-**Coming soon: the AI assistant** / **Bientôt : l'assistant IA**, then the way into the guides. Keep
+**Coming soon: the AI assistant** / **Bientôt : l'assistant IA**, then the way into the guides,
+a purple **Made to fit your organization** / **Pensé pour votre organisation** callout (Strived is
+highly customizable for B2B clients: name, logo and colors, certificate signature and stamp, e-mails
+sent in their name, their own catalog; these are the admin's Platform Configuration settings) and
+the "Need help?" tip. Keep
 them short, concrete and true to the app: claim only what the guides document (online payment is
 not available yet, so it is not sold there).
 
@@ -154,7 +158,8 @@ delete a screenshot when its page stops using it.
 - Components in use: `<Note>`, `<Tip>`, `<Warning>`, `<Steps>` / `<Step>`, `<Frame caption="…">`
   around an `<img src="/images/…" alt="…" />`, `<AccordionGroup>` / `<Accordion>`, `<CardGroup>` /
   `<Card>`, `<Columns cols={3}>` (the phone grid of the presentation pages; `style.css` keeps it at
-  two per row on small screens), Markdown tables. Only built-in Mintlify components; no custom JSX.
+  two per row on small screens), `<Callout icon="building" color="#7625C2">` (the B2B callout of
+  the presentation pages), Markdown tables. Only built-in Mintlify components; no custom JSX.
   The one video is a YouTube `<iframe>` inside `<Frame caption="…">` (the AI assistant demo on the
   presentation pages): `youtube-nocookie.com/embed/<id>`, a `title`, and
   `style={{ width: "100%", aspectRatio: "16 / 9", border: 0 }}` so it scales with the page.
