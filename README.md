@@ -15,8 +15,9 @@ English pages live at the root, French pages in `fr/` with the same file names, 
 | Admin | `admin-guide/` (9 guides) | `fr/admin-guide/` |
 
 The home page (`index.mdx` "Presentation", French `fr/index.mdx` "Présentation") presents the
-platform and what each role does, with a diagram and screenshots of the iPhone app
-(`images/presentation/`). Guide screenshots are in `images/<folder>/`;
+platform and what each role does, with a diagram, screenshots of the iPhone app
+(`images/presentation/`) and a "coming soon" video of the AI assistant. Guide screenshots are in
+`images/<folder>/`;
 navigation, header, footer and language menu in `docs.json`; a little custom CSS in `style.css`.
 Writing and screenshot rules are in [`CLAUDE.md`](CLAUDE.md).
 

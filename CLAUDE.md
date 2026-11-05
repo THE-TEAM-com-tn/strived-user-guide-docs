@@ -52,9 +52,19 @@ The two presentation pages (`index.mdx` "Presentation" in English, `fr/index.mdx
 in French, twins with the same title) are also a
 **presentation for people thinking of buying the platform**: what Strived is, the tagline, the
 diagram, what each role does, what learners get, **Strived on the phone** (six iPhone shots: three
-welcome-tour steps, the dashboard, My Trainings, a classroom chat), what the organization gets, then
-the way into the guides. Keep them short, concrete and true to the app: claim only what the guides document (online
-payment and the course player's AI assistant are not available yet, so they are not sold there).
+welcome-tour steps, the dashboard, My Trainings, a classroom chat), what the organization gets,
+**Coming soon: the AI assistant** / **Bientôt : l'assistant IA**, then the way into the guides. Keep
+them short, concrete and true to the app: claim only what the guides document (online payment is
+not available yet, so it is not sold there).
+
+The course player's **AI assistant** is not released yet. It appears only in that "Coming soon"
+section: a short paragraph (answers from the training's own course material with its sources under
+each answer; plan of the training, session summaries, key points, examples, quizzes; English or
+French; enrolled learners only) and the user's YouTube demo on a PMP training
+(`GmlSoXiWilY`, by THE TEAM's channel). The user asked for it to be presented as **coming soon**:
+don't call it a plan or a project, don't name the AI model or provider behind it, and don't document
+it in the guides until it is released. When it ships, turn the section into a normal feature and
+add a guide step.
 
 **Origin.** Every guide was copied on 05/11/2026 from `LMS_Documentation` (branch `chat+ai`,
 commit `0a7358d`): `user-guide/` became `student-guide/` here (links and image paths renamed), the
@@ -145,6 +155,9 @@ delete a screenshot when its page stops using it.
   around an `<img src="/images/…" alt="…" />`, `<AccordionGroup>` / `<Accordion>`, `<CardGroup>` /
   `<Card>`, `<Columns cols={3}>` (the phone grid of the presentation pages; `style.css` keeps it at
   two per row on small screens), Markdown tables. Only built-in Mintlify components; no custom JSX.
+  The one video is a YouTube `<iframe>` inside `<Frame caption="…">` (the AI assistant demo on the
+  presentation pages): `youtube-nocookie.com/embed/<id>`, a `title`, and
+  `style={{ width: "100%", aspectRatio: "16 / 9", border: 0 }}` so it scales with the page.
 - Links are absolute site paths: `/admin-guide/manage-orders` on English pages,
   `/fr/admin-guide/manage-orders` on French pages. English pages link to English pages only,
   French pages to French pages only (the language menu handles the switch).
@@ -220,7 +233,7 @@ delete a screenshot when its page stops using it.
   bar, so the black band at the top is real. Each shot (1206 × 2622) gets a simple phone frame (dark
   bezel, Dynamic Island) and is saved 600 px wide. Leave out the Marketplace, exam screens (the app
   itself recommends the web for exams) and the course player (it shows the AI assistant button,
-  not sold yet). Retake both languages together.
+  which is only announced as coming soon). Retake both languages together.
 - **The demo classroom `class - 10`.** Every classroom screenshot of the four roles shows this TEST
   classroom (instructor `instructor@fivermail.com`, one learner "Student Demo"): welcome text, a
   Google Meet card with a **Join Google Meet** button, "This week's plan" table, resources, house
