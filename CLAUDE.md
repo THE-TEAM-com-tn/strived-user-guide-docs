@@ -273,6 +273,13 @@ twins and retake the screenshots.
 - **Instructor**: no publish / draft, archive, assign or AI-assistant switch (an admin does those);
   the revenue percentage comes from the admin. The sales page is titled **Sales Details** even in
   French (sidebar: **Détails des ventes**).
+- **Admin, Learner Analytics → Trainings**: a quiz the learner started but never finished shows
+  **1 attempt(s)** next to **No Attempts Yet** (FR **1 tentative(s)** / **Aucune tentative pour le
+  moment**): the count includes unfinished attempts, the score only finished ones. `manage-users`
+  explains it in "Good to know" (both twins). The Trainings-tab shot
+  (`users/06-learner-trainings.png`, EN + FR) is Student Demo's PGMP with chapters 01 and 05
+  opened, a 2× crop (CSS x 120–1320, y 244–1000) so the small rows stay readable in the page
+  column (the chapter tree only loads since the backend fix of 05/11/2026).
 - **Content manager**: the five dashboard cards show **sample figures**, not real ones, and
   `get-started` warns about it. **Create classroom** fails for a content manager ("Something went
   wrong", in French « Une erreur s'est produite — Something went wrong »), so `classrooms` (both

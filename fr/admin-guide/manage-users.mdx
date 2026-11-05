@@ -118,11 +118,48 @@ onglets en dessous donnent la vue complète, chacun avec un compteur :
 | :-- | :-- |
 | **Commandes** | Toutes les commandes avec leur référence, leur statut, leur date, leurs articles et leur montant. |
 | **Panier** | Ce qui attend dans le panier de l'apprenant. |
-| **Formations** | Les formations auxquelles l'apprenant a accès. |
+| **Formations** | Les formations auxquelles l'apprenant a accès, avec sa progression chapitre par chapitre (voir plus bas). |
 | **Examens** | Les examens auxquels l'apprenant a accès. |
 | **Certificats** | Les certificats obtenus par l'apprenant. |
 | **Classrooms & Chat** | Les classes dont l'apprenant fait partie. |
 | **Notifications** | Les notifications reçues par l'apprenant. |
+
+### Suivre la progression d'un apprenant dans une formation
+
+Ouvrez l'onglet **Formations** : une ligne par formation à laquelle l'apprenant a accès. Cliquez
+sur une ligne pour ouvrir la formation, puis sur un chapitre pour voir ses leçons et ses quiz.
+
+<Frame caption="L'onglet Formations, avec la formation PGMP et deux de ses chapitres ouverts.">
+  <img src="/images/admin-guide/fr/users/06-learner-trainings.png" alt="L'onglet Formations de Student Demo : PMP, Power BI et PGMP avec leur anneau de progression, leur statut et leur cloche de rappel ; PGMP est ouverte sur la liste de ses chapitres, le chapitre 01 montre une leçon terminée et un quiz sans tentative, le chapitre 05 une leçon non terminée et un quiz sans tentative" />
+</Frame>
+
+Chaque ligne de formation affiche :
+
+| Élément de la ligne | Ce qu'il vous indique |
+| :-- | :-- |
+| **L'anneau** | La progression globale en pourcentage : leçons terminées et quiz réussis, sur l'ensemble des leçons et des quiz de la formation. |
+| **Leçons** | Les leçons terminées sur le total (**6/31**). |
+| **Quizzes** | Les quiz réussis sur le total (**0/10**). Affiché seulement si la formation contient des quiz. |
+| **Le statut** | **Pas commencé**, **En cours** ou **Terminé**. Le compteur au-dessus de la liste (**1 Terminé**) totalise les formations terminées. |
+| **La cloche** (**Rappel**) | Envoie à l'apprenant un rappel pour terminer la formation (voir plus bas). |
+
+Dans une formation ouverte, chaque chapitre indique ce qui est fait (**1/1 leçons · 0/1 quiz**)
+avec une petite barre, verte une fois tout le chapitre terminé. Dans un chapitre ouvert :
+
+- une **coche verte** marque une leçon terminée ou un quiz réussi ; un **cercle vide** marque une
+  leçon que l'apprenant n'a pas terminée ou un quiz qu'il n'a pas encore réussi ;
+- l'icône devant le nom donne le type de leçon (vidéo, document…), et **Quiz de fin de chapitre**
+  signale les quiz du chapitre ;
+- la pastille au bout d'une ligne de quiz donne le résultat de l'apprenant : **Réussi · 85%**,
+  **Meilleur 40 %** (tenté, pas encore réussi) ou **Aucune tentative pour le moment**.
+
+Un quiz ne compte comme fait qu'une fois réussi, c'est-à-dire avec un score égal ou supérieur à
+son pourcentage de réussite. Quand la formation a un quiz final, il apparaît après les chapitres
+sous **Quiz final**.
+
+**Relancer un apprenant.** La cloche ouvre une fenêtre **Rappel** avec un message tout prêt :
+choisissez la langue (**Anglais**, **Français** ou **Arabe**), ajustez le titre et le texte si
+besoin, puis **Confirmer**. L'apprenant le reçoit en notification dans l'application et par e-mail.
 
 <Tip>
   Un apprenant appelle au sujet d'un paiement ou d'une formation manquante ? Commencez ici :
@@ -177,5 +214,11 @@ compte** le retire ; sur un formateur non vérifié, le bouton vérifie le compt
     Depuis **Formations** : **⋯ → Attribuer des apprenants**, voir
     [Gérer les formations](/fr/admin-guide/manage-trainings). Pour plusieurs formations et examens
     d'un coup, utilisez un voucher : voir [Vouchers et coupons](/fr/admin-guide/vouchers-and-coupons).
+  </Accordion>
+  <Accordion title="Un quiz affiche 1 tentative(s) à côté de Aucune tentative pour le moment">
+    L'apprenant a commencé le quiz sans le terminer. **tentative(s)** compte toutes les tentatives,
+    même inachevées, alors que la pastille n'affiche un score que pour les tentatives terminées,
+    d'où **Aucune tentative pour le moment**. Le quiz reste non réussi tant que l'apprenant n'a pas
+    terminé une tentative avec un score suffisant.
   </Accordion>
 </AccordionGroup>

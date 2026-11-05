@@ -117,11 +117,48 @@ counter:
 | :-- | :-- |
 | **Orders** | Every order with its reference, status, date, items and amount. |
 | **Cart** | What is waiting in the learner's cart. |
-| **Trainings** | The trainings the learner has access to. |
+| **Trainings** | The trainings the learner has access to, with their progress chapter by chapter (see below). |
 | **Exams** | The exams the learner has access to. |
 | **Certificates** | The certificates the learner has earned. |
 | **Classrooms & Chat** | The classrooms the learner belongs to. |
 | **Notifications** | The notifications the learner has received. |
+
+### Follow a learner's progress in a training
+
+Open the **Trainings** tab: one row per training the learner has access to. Click a row to open
+the training, then click a chapter to see its lessons and quizzes.
+
+<Frame caption="The Trainings tab, with the PGMP training and two of its chapters opened.">
+  <img src="/images/admin-guide/users/06-learner-trainings.png" alt="The Trainings tab of Student Demo: PMP, Power BI and PGMP with their progress rings, statuses and reminder bells; PGMP is opened on its chapter list, chapter 01 shows a finished lesson and an unattempted quiz, chapter 05 an unfinished lesson and an unattempted quiz" />
+</Frame>
+
+Each training row shows:
+
+| Part of the row | What it tells you |
+| :-- | :-- |
+| **The ring** | The overall progress in percent: finished lessons and passed quizzes, out of all the lessons and quizzes of the training. |
+| **Lessons** | Lessons finished out of the total (**6/31**). |
+| **Quizzes** | Quizzes passed out of the total (**0/10**). Only shown when the training has quizzes. |
+| **The status** | **Not started**, **In progress** or **Completed**. The counter above the list (**1 Completed**) adds up the finished trainings. |
+| **The bell** (**Reminder**) | Sends the learner a reminder to finish the training (see below). |
+
+Inside an opened training, each chapter shows what is done (**1/1 lessons · 0/1 quizzes**) with a
+small bar, green once the whole chapter is done. In an opened chapter:
+
+- a **green tick** marks a finished lesson or a passed quiz; an **empty circle** marks a lesson the
+  learner hasn't finished or a quiz they haven't passed yet;
+- the icon before the name gives the lesson type (video, document…), and **End of Chapter Quiz**
+  marks the chapter's quizzes;
+- the pill at the end of a quiz row gives the learner's result: **Passed · 85%**, **Best 40%**
+  (tried, not passed yet), or **No Attempts Yet**.
+
+A quiz counts as done only once it is passed, that is with a score at or above its passing
+percentage. When the training has a final quiz, it is listed after the chapters under
+**Final quiz**.
+
+**Remind a learner.** The bell opens a **Reminder** window with a ready-made message: pick the
+language (**English**, **French** or **Arabic**), adjust the title and the text if needed, then
+**Confirm**. The learner gets it as a notification in the app and by e-mail.
 
 <Tip>
   A learner calls about a payment or a missing training? Start here: **Orders** and **Trainings**
@@ -175,5 +212,10 @@ on an unverified instructor the button verifies the account.
     From **Trainings**: **⋯ → Assign learners** — see
     [Manage trainings](/admin-guide/manage-trainings). For several trainings and exams at once, use a
     voucher — see [Vouchers and coupons](/admin-guide/vouchers-and-coupons).
+  </Accordion>
+  <Accordion title="A quiz shows 1 attempt(s) next to No Attempts Yet">
+    The learner started the quiz but never finished it. **attempt(s)** counts every attempt, even
+    unfinished ones, while the pill only shows a score for finished attempts, hence **No Attempts
+    Yet**. The quiz stays not passed until the learner finishes an attempt with a passing score.
   </Accordion>
 </AccordionGroup>
