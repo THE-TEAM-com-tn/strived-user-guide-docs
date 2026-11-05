@@ -23,7 +23,7 @@
     "primary": {
       "type": "button",
       "label": "Open Strived",
-      "href": "https://elearning.theteam.com.tn"
+      "href": "https://elearning-test.theteam.com.tn/"
     }
   },
   "navigation": {
@@ -130,12 +130,12 @@
           "primary": {
             "type": "button",
             "label": "Ouvrir Strived",
-            "href": "https://elearning.theteam.com.tn"
+            "href": "https://elearning-test.theteam.com.tn/"
           }
         },
         "footer": {
           "socials": {
-            "website": "https://elearning.theteam.com.tn"
+            "website": "https://elearning-test.theteam.com.tn/"
           },
           "links": [
             {
@@ -168,7 +168,7 @@
                 },
                 {
                   "label": "Ouvrir Strived",
-                  "href": "https://elearning.theteam.com.tn"
+                  "href": "https://elearning-test.theteam.com.tn/"
                 }
               ]
             },
@@ -275,7 +275,7 @@
   },
   "footer": {
     "socials": {
-      "website": "https://elearning.theteam.com.tn"
+      "website": "https://elearning-test.theteam.com.tn/"
     },
     "links": [
       {
@@ -308,7 +308,7 @@
           },
           {
             "label": "Open Strived",
-            "href": "https://elearning.theteam.com.tn"
+            "href": "https://elearning-test.theteam.com.tn/"
           }
         ]
       },

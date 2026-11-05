@@ -125,8 +125,8 @@ delete a screenshot when its page stops using it.
   page: same file name in both trees, never a French slug, and never the same path in both languages.
 - **Header**, top row: the logo (links to `/`), the language menu, the search, a **Support** /
   **Assistance** link (`mailto:service.desk@theteam.com.tn`, the address the app's Help Center
-  shows) and the **Open Strived** / **Ouvrir Strived** button (`https://elearning.theteam.com.tn`,
-  the production app).
+  shows) and the **Open Strived** / **Ouvrir Strived** button (`https://elearning-test.theteam.com.tn/`,
+  the TEST app for now; switch it back to `https://elearning.theteam.com.tn` for production).
 - **Header**, tab row, per language: **Presentation** / **Présentation**, then one tab per role:
   Student / Apprenant, Instructor / Formateur, Content Manager / Gestionnaire de contenu, Admin.
   Each role tab has one group ("Student guides" / "Guides de l'apprenant", …) listing the pages in
