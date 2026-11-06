@@ -58,7 +58,8 @@
                   "student-guide/get-your-certificates",
                   "student-guide/classrooms-and-chat",
                   "student-guide/buy-a-training",
-                  "student-guide/manage-your-account"
+                  "student-guide/manage-your-account",
+                  "student-guide/mobile-app"
                 ]
               }
             ]
@@ -75,7 +76,8 @@
                   "instructor-guide/create-and-update-trainings",
                   "instructor-guide/create-exams-and-quizzes",
                   "instructor-guide/classrooms-and-chatrooms",
-                  "instructor-guide/track-your-sales"
+                  "instructor-guide/track-your-sales",
+                  "instructor-guide/mobile-app"
                 ]
               }
             ]
@@ -91,7 +93,8 @@
                   "content-manager-guide/manage-trainings",
                   "content-manager-guide/manage-exams-and-quizzes",
                   "content-manager-guide/classrooms",
-                  "content-manager-guide/categories-and-tags"
+                  "content-manager-guide/categories-and-tags",
+                  "content-manager-guide/mobile-app"
                 ]
               }
             ]
@@ -111,7 +114,8 @@
                   "admin-guide/manage-users",
                   "admin-guide/classrooms-and-chatrooms",
                   "admin-guide/send-notifications",
-                  "admin-guide/categories-and-tags"
+                  "admin-guide/categories-and-tags",
+                  "admin-guide/mobile-app"
                 ]
               }
             ]
@@ -211,7 +215,8 @@
                   "fr/student-guide/get-your-certificates",
                   "fr/student-guide/classrooms-and-chat",
                   "fr/student-guide/buy-a-training",
-                  "fr/student-guide/manage-your-account"
+                  "fr/student-guide/manage-your-account",
+                  "fr/student-guide/mobile-app"
                 ]
               }
             ]
@@ -228,7 +233,8 @@
                   "fr/instructor-guide/create-and-update-trainings",
                   "fr/instructor-guide/create-exams-and-quizzes",
                   "fr/instructor-guide/classrooms-and-chatrooms",
-                  "fr/instructor-guide/track-your-sales"
+                  "fr/instructor-guide/track-your-sales",
+                  "fr/instructor-guide/mobile-app"
                 ]
               }
             ]
@@ -244,7 +250,8 @@
                   "fr/content-manager-guide/manage-trainings",
                   "fr/content-manager-guide/manage-exams-and-quizzes",
                   "fr/content-manager-guide/classrooms",
-                  "fr/content-manager-guide/categories-and-tags"
+                  "fr/content-manager-guide/categories-and-tags",
+                  "fr/content-manager-guide/mobile-app"
                 ]
               }
             ]
@@ -264,7 +271,8 @@
                   "fr/admin-guide/manage-users",
                   "fr/admin-guide/classrooms-and-chatrooms",
                   "fr/admin-guide/send-notifications",
-                  "fr/admin-guide/categories-and-tags"
+                  "fr/admin-guide/categories-and-tags",
+                  "fr/admin-guide/mobile-app"
                 ]
               }
             ]

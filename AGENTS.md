@@ -7,5 +7,5 @@ it, in particular:
   trailer and no "Generated with ..." line in commit messages or PR descriptions. Author commits as
   the user only.
 - Commit and push only when the user asks.
-- This site is the user guide of the Strived web app, for students, instructors, content managers
-  and admins, in English and French: no API, code or developer content.
+- This site is the user guide of the Strived web and phone apps, for students, instructors, content
+  managers and admins, in English and French: no API, code or developer content.

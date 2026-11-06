@@ -35,7 +35,7 @@ Reading the other repos is fine and often needed: UI labels come from
 
 The **public user guide** of **Strived**, the e-learning platform by THE TEAM: step-by-step guides
 with screenshots of the **web app**, for the four roles that use it (student, instructor, content
-manager, admin), in **English and French**.
+manager, admin), in **English and French**, plus one **Mobile App** page per role for the phone app.
 
 It is written for people who use the app, not for developers. Keep out of it:
 
@@ -51,8 +51,10 @@ source of the "How Strived works" diagram, which the site draws as a picture.
 The two presentation pages (`index.mdx` "Presentation" in English, `fr/index.mdx` "Présentation"
 in French, twins with the same title) are also a
 **presentation for people thinking of buying the platform**: what Strived is, the tagline, the
-diagram, what each role does, what learners get, **Strived on the phone** (six iPhone shots: three
-welcome-tour steps, the dashboard, My Trainings, a classroom chat), what the organization gets,
+diagram, what each role does, what learners get, **Strived on the phone** (the App Store and Google
+Play badges, then "For learners": six iPhone shots: three welcome-tour steps, the dashboard, My
+Trainings, a classroom chat; "For instructors": three shots; and a line for content managers and
+admins, each with a link to its role's **Mobile App** page), what the organization gets,
 **Coming soon: the AI assistant** / **Bientôt : l'assistant IA**, then the way into the guides,
 a purple **Made to fit your organization** / **Pensé pour votre organisation** callout (Strived is
 highly customizable for B2B clients: name, logo and colors, certificate signature and stamp, e-mails
@@ -84,10 +86,10 @@ too (ask the user when unsure which copy wins).
 ```
 docs.json                 # Mintlify config: name, colors, logo, navbar, footer, redirects and the NAVIGATION (every page must be listed)
 index.mdx                 # Home page "Presentation" (English): presentation of Strived + diagram + role cards
-student-guide/            # 9 English guides for students
-instructor-guide/         # 6 English guides for instructors
-content-manager-guide/    # 5 English guides for content managers
-admin-guide/              # 9 English guides for admins
+student-guide/            # 10 English guides for students (mobile-app = the phone app)
+instructor-guide/         # 7 English guides for instructors
+content-manager-guide/    # 6 English guides for content managers
+admin-guide/              # 10 English guides for admins
 fr/                       # FRENCH: the same tree, same file names (fr/index.mdx = "Présentation",
                           #   fr/student-guide/first-steps.mdx = "Premiers pas", …)
 style.css                 # Small custom CSS Mintlify loads on every page (logo size, footer link wrapping, phone grid on small screens)
@@ -96,7 +98,8 @@ images/
   instructor-guide/<topic>/   instructor-guide/fr/<topic>/
   content-manager-guide/<topic>/   content-manager-guide/fr/<topic>/
   admin-guide/<topic>/        admin-guide/fr/<topic>/
-  presentation/en/   presentation/fr/   # the six framed iPhone shots of "Strived on the phone" (same file names)
+  # <topic> = mobile: the framed iPhone shots of each role's Mobile App page
+  presentation/en/   presentation/fr/   # the six framed iPhone shots of "Strived on the phone" + the two store badges (same file names)
 logo/strived-light.png    # header + footer logo on light pages: the Strived logo + "Strived" in #7625C2
 logo/strived-dark.png     # same on dark pages, name in #EDE9FE
 favicon.png               # the Strived logo alone
@@ -157,12 +160,20 @@ delete a screenshot when its page stops using it.
   (Font Awesome name: `rocket`, `compass`, `chart-line`, …).
 - Components in use: `<Note>`, `<Tip>`, `<Warning>`, `<Steps>` / `<Step>`, `<Frame caption="…">`
   around an `<img src="/images/…" alt="…" />`, `<AccordionGroup>` / `<Accordion>`, `<CardGroup>` /
-  `<Card>`, `<Columns cols={3}>` (the phone grid of the presentation pages; `style.css` keeps it at
-  two per row on small screens), `<Callout icon="building" color="#7625C2">` (the B2B callout of
+  `<Card>`, `<Columns cols={3}>` (the phone grid of the presentation and Mobile App pages; `style.css`
+  keeps it at two per row on small screens), `<Callout icon="building" color="#7625C2">` (the B2B callout of
   the presentation pages), Markdown tables. Only built-in Mintlify components; no custom JSX.
   The one video is a YouTube `<iframe>` inside `<Frame caption="…">` (the AI assistant demo on the
   presentation pages): `youtube-nocookie.com/embed/<id>`, a `title`, and
   `style={{ width: "100%", aspectRatio: "16 / 9", border: 0 }}` so it scales with the page.
+- **Store badges** (`index.mdx` and `fr/index.mdx`, "Strived on the phone"): a plain
+  `<div className="store-badges">` (styled in `style.css`) around two `<a>` + `<img noZoom>`, using
+  the official artwork, localized: Apple's `badge-app-store.svg` and Google's
+  `badge-google-play.png` (trimmed of its transparent margin so both badges line up), in
+  `images/presentation/en|fr/`. Don't redraw or recolor them, keep both at the same height.
+  **The app isn't published yet, so all four `href` are `#`**, with a comment above them: replace
+  them with the real store URLs on both pages once it is. Until then they only jump to the top of
+  the page.
 - Links are absolute site paths: `/admin-guide/manage-orders` on English pages,
   `/fr/admin-guide/manage-orders` on French pages. English pages link to English pages only,
   French pages to French pages only (the language menu handles the switch).
@@ -198,6 +209,12 @@ delete a screenshot when its page stops using it.
   | `acheter-une-formation` → `buy-a-training` | | | `envoyer-des-notifications` → `send-notifications` |
   | `gerer-son-compte` → `manage-your-account` | | | `categories-et-tags` → `categories-and-tags` |
 
+- **`mobile-app` pages** (one per role, EN + FR, last in each tab): they exist **only in this repo**,
+  `LMS_Documentation` has no copy. Student and instructor: same format as the other guides, tab by
+  tab. Content manager and admin: a short page, because the app refuses those roles on a phone (**An
+  Error Has Occurred** / **Role not supported for this device**). That refusal applies to phones
+  only (the app treats tablets like the web app), so write "on a phone", not "on mobile devices".
+  The course player stays out of them, see §6.
 - **Voucher ≠ coupon.** A **voucher** ("voucher (bon)" in French) unlocks a bundle of trainings and
   exams for free; an admin creates it and it reaches the student **by e-mail**; the student redeems
   it with **Apply voucher** / **Appliquer un bon**. A **coupon** is a discount code typed in the
@@ -237,16 +254,30 @@ delete a screenshot when its page stops using it.
 - The voucher e-mail is **French only**, so `use-a-voucher` shows the French e-mail shots
   (`fr/voucher/0[1-3]-email-*.png`) and explains the labels in a table. Swap them if the e-mail is
   ever translated.
-- **Phone shots** (`images/presentation/en|fr/`, used only by the two presentation pages): the iOS
-  app on the **iPhone 17 Pro simulator**, against TEST, signed in as `student@fivermail.com`. Taken
-  on 05/11/2026 from a clean copy of `LMS_Frontend` HEAD with a throwaway integration test that drives
+- **Phone shots** (`images/presentation/en|fr/` and `images/<role>-guide/.../mobile/`): the iOS
+  app on the **iPhone 17 Pro simulator**, against TEST, signed in as `student@fivermail.com` (or
+  `instructor@fivermail.com`). Presentation shots taken on 05/11/2026, Mobile App shots on
+  06/11/2026 (the student page reuses the first two welcome-tour shots of `images/presentation/`, the
+  presentation page reuses three instructor shots), all from a clean copy of `LMS_Frontend` HEAD
+  (commit `acfd79a`) with a throwaway integration test that drives
   the app (onboarding steps 1-3 with English or Français picked; then Dashboard, a tap on
   **My Content** / **Mon contenu** and **My Trainings** / **Mes formations**, and the `class - 10`
   chat), while `xcrun simctl io <device> screenshot` grabs each screen. The app hides the iOS status
   bar, so the black band at the top is real. Each shot (1206 × 2622) gets a simple phone frame (dark
-  bezel, Dynamic Island) and is saved 600 px wide. Leave out the Marketplace, exam screens (the app
-  itself recommends the web for exams) and the course player (it shows the AI assistant button,
-  which is only announced as coming soon). Retake both languages together.
+  bezel, Dynamic Island) and is saved 600 px wide. On the presentation pages, leave out the
+  Marketplace and the exam screens (the app itself recommends the web for exams). **The course player
+  stays out everywhere, Mobile App pages included**: its toolbar always shows the AI assistant button,
+  which is only announced as coming soon. Add it to the student Mobile App page when the assistant
+  ships. The student rule applies: blur the e-mail (`15-settings.png`). The instructor shots keep
+  theirs. Navigate and scroll only: **Notify learners** is opened, never sent. The instructor's one
+  notification on TEST is in French, on the English pages too (`10-notifications`,
+  `02-dashboard-lists`). Dismiss the **Pinch to zoom** hint before shooting a classroom page. The
+  `Classroom 10` chat ended with two stray test messages on 06/11/2026 (`hello`, then `qsd` at 18:43):
+  `09-conversation` is scrolled up to the real exchange, but the list previews can't be, so the
+  French `02-dashboard-lists` and `08-chat` show "qsd" (the chat has no per-message delete, only a
+  wipe of the whole conversation). Retake them if a clean message follows it. Content
+  manager and admin shot: the same refusal in both folders, shot with an admin account (same code
+  path for the two roles). Retake both languages together.
 - **The demo classroom `class - 10`.** Every classroom screenshot of the four roles shows this TEST
   classroom (instructor `instructor@fivermail.com`, one learner "Student Demo"): welcome text, a
   Google Meet card with a **Join Google Meet** button, "This week's plan" table, resources, house
@@ -288,6 +319,9 @@ twins and retake the screenshots.
   can keep showing **Needs attention** / **À compléter** until you move to another question and
   back. In French the group counter says **Articles** (for Items) and **Créer une catégorie** adds a
   group. The exams pages say both.
+- **French wording in the phone app**: **Classrooms & Chat**, the **Chat** / **Classrooms** buttons
+  under it and **Marketplace** stay in English; the bottom tab is **Classes**. The student's order
+  notifications stay in English too. The two French `mobile-app` pages say so.
 - **French wording** quoted as the app shows it: **Ajouter une formation** for "Add Education",
   **Détails** for "Basic Info", **Instructeur** or **Formateur** depending on the screen.
 - **Student**: the English pages describe the app as of 04/11/2026; the French ones were written on
