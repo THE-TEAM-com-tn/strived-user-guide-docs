@@ -86,6 +86,7 @@ too (ask the user when unsure which copy wins).
 ```
 docs.json                 # Mintlify config: name, colors, logo, navbar, footer, redirects and the NAVIGATION (every page must be listed)
 index.mdx                 # Home page "Presentation" (English): presentation of Strived + diagram + role cards
+faq.mdx                   # HIDDEN French page "Pourquoi choisir Strived ?" at /faq: NOT in docs.json on purpose (see §3)
 student-guide/            # 10 English guides for students (mobile-app = the phone app)
 instructor-guide/         # 7 English guides for instructors
 content-manager-guide/    # 6 English guides for content managers
@@ -144,7 +145,15 @@ delete a screenshot when its page stops using it.
   4.2.1204 and the hosted site show them correctly.** Preview with the latest CLI (§8).
 - `redirects` sends the old French addresses (`/student-guide/premiers-pas`, …, `/presentation`)
   to their new `fr/` pages, so links shared before 05/11/2026 keep working. Don't remove them.
-- A page doesn't appear on the site until its path (without `.mdx`) is in `docs.json`.
+- A page doesn't appear in the menus until its path (without `.mdx`) is in `docs.json`.
+- **Hidden page `faq.mdx` (`/faq`)**, French only, no English twin: "Pourquoi choisir Strived ?" (the
+  platform's selling points, a comparison table, ready-to-post LinkedIn texts, an FAQ). The user
+  shares it by direct link only, so **never add it to `docs.json`, never link to it** from another
+  page, the navbar or the footer, and keep `noindex: true` in its frontmatter. Left out of the
+  navigation, Mintlify keeps it out of the site search, the sitemap and the AI assistant (no `seo`
+  setting in `docs.json`: don't add `seo.indexing: "all"`). It shows the English header and sidebar,
+  because it sits outside `fr/`. Its text is the user's own and is not held to the §1 rules for the
+  presentation pages (it presents the AI assistant and the payment methods as available).
 - File names are kebab-case English slugs, in both languages.
 - Colors are Strived's purple, chosen by the user: `#7625C2` (primary and buttons; light `#B987E8` for dark mode), to match the logo and
   the app. The contextual menu keeps copy / view / ChatGPT / Claude / Perplexity only; the developer
